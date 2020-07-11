@@ -9,7 +9,7 @@
      }
      else {
          $('[rel="icon"]').attr('href', "/images/astronaut32.png");
-         document.title = '✧٩(ˊωˋ*)و' + OriginTitle;
+         document.title = '✧٩(ˊωˋ*)و  ' + OriginTitle;
          titleTime = setTimeout(function () {
              document.title = OriginTitle;
          }, 2000);
