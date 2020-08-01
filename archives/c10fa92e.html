@@ -24,20 +24,23 @@
   </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-  <meta name="description" content="这篇笔记主要介绍《Head First HTML与CSS》有关CSS的部分">
+  <meta name="description" content="这篇笔记主要介绍《Head First HTML与CSS》有关CSS入门、增加字体和盒模型的部分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="读《Head First HTML 与 CSS》下">
+<meta property="og:title" content="读《Head First HTML 与 CSS》3">
 <meta property="og:url" content="https://feirouafeirou.github.io/archives/c10fa92e.html">
 <meta property="og:site_name" content="wx的博客">
-<meta property="og:description" content="这篇笔记主要介绍《Head First HTML与CSS》有关CSS的部分">
+<meta property="og:description" content="这篇笔记主要介绍《Head First HTML与CSS》有关CSS入门、增加字体和盒模型的部分">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://feirouafeirou.github.io/archives/c10fa92e/image-20200719153934588.png">
 <meta property="og:image" content="https://feirouafeirou.github.io/archives/c10fa92e/image-20200719162130277.png">
 <meta property="og:image" content="https://feirouafeirou.github.io/archives/c10fa92e/image-20200719162905214.png">
 <meta property="og:image" content="https://feirouafeirou.github.io/archives/c10fa92e/image-20200719164321079.png">
 <meta property="og:image" content="https://feirouafeirou.github.io/archives/c10fa92e/image-20200719164740026.png">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/c10fa92e/image-20200729185643450.png">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/c10fa92e/image-20200729191748646.png">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/c10fa92e/image-20200801110239295.png">
 <meta property="article:published_time" content="2020-07-19T07:00:30.000Z">
-<meta property="article:modified_time" content="2020-07-19T08:50:09.098Z">
+<meta property="article:modified_time" content="2020-08-01T03:06:48.461Z">
 <meta property="article:author" content="wx">
 <meta property="article:tag" content="HTML与CSS">
 <meta property="article:tag" content="《Head First HTML与CSS》">
@@ -57,7 +60,7 @@
   };
 </script>
 
-  <title>读《Head First HTML 与 CSS》下 | wx的博客</title>
+  <title>读《Head First HTML 与 CSS》3 | wx的博客</title>
   
 
 
@@ -211,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          读《Head First HTML 与 CSS》下
+          读《Head First HTML 与 CSS》3
         </h1>
 
         <div class="post-meta">
@@ -220,10 +223,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-19 15:00:30 / 修改时间：16:50:09" itemprop="dateCreated datePublished" datetime="2020-07-19T15:00:30+08:00">2020-07-19</time>
+              <time title="创建时间：2020-07-19 15:00:30" itemprop="dateCreated datePublished" datetime="2020-07-19T15:00:30+08:00">2020-07-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 11:06:48" itemprop="dateModified" datetime="2020-08-01T11:06:48+08:00">2020-08-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -237,7 +246,7 @@
           
           
           <br>
-            <span id="/archives/c10fa92e.html" class="post-meta-item leancloud_visitors" data-flag-title="读《Head First HTML 与 CSS》下" title="阅读次数">
+            <span id="/archives/c10fa92e.html" class="post-meta-item leancloud_visitors" data-flag-title="读《Head First HTML 与 CSS》3" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -263,14 +272,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -283,11 +292,11 @@
 
       
         <blockquote>
-<p>这篇笔记主要介绍《Head First HTML 与 CSS》有关 CSS 的部分</p>
+<p>这篇笔记主要介绍《Head First HTML 与 CSS》有关 CSS 入门、增加字体和盒模型的部分</p>
 </blockquote>
 <a id="more"></a>
 
-<h1 id="加一点样式"><a href="# 加一点样式" class="headerlink" title="加一点样式"></a>加一点样式 </h1><h2 id="把 CSS 放入 HTML"><a href="# 把 CSS 放入 HTML" class="headerlink" title="把 CSS 放入 HTML"></a> 把 CSS 放入 HTML</h2><ul>
+<h1 id="CSS 入门"><a href="#CSS 入门" class="headerlink" title="CSS 入门"></a>CSS 入门 </h1><h2 id="把 CSS 放入 HTML"><a href="# 把 CSS 放入 HTML" class="headerlink" title="把 CSS 放入 HTML"></a> 把 CSS 放入 HTML</h2><ul>
 <li>示例代码</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 在此处添加 css */</span></span></span><br><span class="line">        p&#123;</span><br><span class="line">            color: pink;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -357,11 +366,140 @@
 
 
 
+<h1 id="增加字体和颜色模式"><a href="# 增加字体和颜色模式" class="headerlink" title="增加字体和颜色模式"></a>增加字体和颜色模式</h1><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">font-family</td>
+<td align="center">字体系列</td>
+</tr>
+<tr>
+<td align="center">font-size</td>
+<td align="center">字体大小</td>
+</tr>
+<tr>
+<td align="center">color</td>
+<td align="center">文本颜色</td>
+</tr>
+<tr>
+<td align="center">font-weight</td>
+<td align="center">字体粗细</td>
+</tr>
+<tr>
+<td align="center">text-decoration</td>
+<td align="center">文本风格</td>
+</tr>
+</tbody></table>
+<h2 id="字体系列"><a href="# 字体系列" class="headerlink" title="字体系列"></a>字体系列</h2><ul>
+<li>每个 font-family 包含一组有共同特征的字体。共有 5 个字体系列：sans-serif，serif，monospace，cursive 和 fantasy。每个字体系列都包括大量字体，在页面上看到的只是每个字体系列中很少的几个字体例子。</li>
+</ul>
+<h3 id="使用 CSS 指定字体系列"><a href="# 使用 CSS 指定字体系列" class="headerlink" title="使用 CSS 指定字体系列"></a>使用 CSS 指定字体系列</h3><img data-src="/archives/c10fa92e/image-20200729185643450.png" class>
 
+<ul>
+<li>利用 font-family 属性，可以创建一个首选字体列表。我们希望大多数浏览器都能有你的第一个选择，不过，如果没有，至少可以确保浏览器能提供同一个字体系列中的一个通用字体。</li>
+<li>若字体名字有空格，则需加上双引号。</li>
+<li>sans-serif 和 serif 字体最全面通用。</li>
+</ul>
+<h3 id="引入 web 字体"><a href="# 引入 web 字体" class="headerlink" title="引入 web 字体"></a>引入 web 字体</h3><ul>
+<li><p>web 字体如何工作</p>
+<ol>
+<li>要利用 web 字体，浏览器首先获取一个引用这些字体的 html 页面。</li>
+<li>浏览器在获取这个页面所需的 web 文件。</li>
+<li>现在，获取了字体后，浏览器显示页面时就会使用这个字体。</li>
+</ol>
+</li>
+<li><p>如果你只是要测试字体，实际上可以把这些字体作为本地文件，存储在你自己的文件系统中并引用（就像存储和引用本地图像一样）。不过，如果你想为 Web 上的用户提供字体，就必须把这些文件放在一个服务器上，或者利用一个托管服务，如 Google 的字体托管跟务，这是免费的。</p>
+</li>
+<li><p>如何为页面增加 web 字体</p>
+<ol>
+<li>找的一个字体</li>
+<li>确保有所需字体的所有格式</li>
+<li>把你的字体文件放在 web 上</li>
+<li>在 CSS 中添加 @font-face 属性</li>
+</ol>
+<img data-src="/archives/c10fa92e/image-20200729191748646.png" class>
 
+<p>   5. 在 CSS 中使用 font-family 名</p>
+<p>   6. 加载页面</p>
+</li>
+<li><p><code>@font-face</code>是一个内置 CSS 规则，而不是一个选择器规则。其他两个常用的内置规则：<code>@import</code>允许导入其他 CSS 文件（而不是 HTML 中通过一个 <code>&lt;link&gt;</code> 链入），另外 <code>@media</code> 允许创建特定于某些“媒体”类型的 CSS 规则，如印刷页、来面屏幕或手机。</p>
+</li>
+<li><p>托管字体服务 <a href="http://www.fontsquirrel.com/" target="_blank" rel="external nofollow noopener noreferrer">FonsSqpird</a>   <a href="http://www.google.com/webfonts" target="_blank" rel="external nofollow noopener noreferrer">Google Web 字体服务</a></p>
+</li>
+</ul>
+<h2 id="调整字体大小"><a href="# 调整字体大小" class="headerlink" title="调整字体大小"></a>调整字体大小</h2><ul>
+<li>px 按像素明确指定字体具体大小</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">14px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>% 用百分号指定字体大小时，会相对于父元素字体大小指定这个字体有多大</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="comment">/* 相对于父元素的 150%，h1 字体大小为 21px*/</span></span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">150%</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>em 用 em 指定字体大小与百分数类似，会相对于父元素字体大小指定这个字体大小</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">    <span class="comment">/* 相对于父元素的 1.2 倍，h2 字体大小为 17px*/</span></span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">1.2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>关键字 可以把一个字体大小指定为 xx-small,x-small,small,medium,large,x-large 或 xx-large, 浏览器会把这些关键字转换为像素值，它会使用浏览器中定义的默认值来完成这个转换。</li>
+</ul>
+<blockquote>
+<p>那么，我到底该如何指定字体大小呢？<br>1. 选择一个关键字（推荐 small 或 medium），指定它作为 body 规则中的字体大小。这相当于页面的默认字体大小。<br>2. 使用 em 或百分数，相对于 body 字体大小指定其他元素的字体大小（选择 em 还是百分数由你决定，因为实际上这两种方法作用是一样的）。</p>
+</blockquote>
+<ul>
+<li>如果没有指定自已大小，大多数情况下，浏览器默认字体大小为 16px。默认地，<code>&lt;h4&gt;</code>标题与 body 字体大小相同。</li>
+</ul>
+<h2 id="改变字体粗细"><a href="# 改变字体粗细" class="headerlink" title="改变字体粗细"></a>改变字体粗细</h2><ul>
+<li><code>font-weight</code>控制文本粗细</li>
+<li><code>font-weight:bold;</code>设置粗体</li>
+<li><code>font-weight:normal;</code>去掉粗体样式</li>
+<li>另外两个属性 <code>bolder</code> 和<code>lighter</code>会相对于所继承的值使文本样式稍粗一些或者稍细一些。这很少使用，因为没有多少字体支持粗细程度的细微差异，所以这两个值通常没有效果。</li>
+<li>还可以把 font-weight 属性设置为 100 到 900 之间的一个数（100 的倍数），不过同样的，这个特性也未得到字体和浏览器的广泛支持，所以通常并不使用。</li>
+</ul>
+<h2 id="为字体增加风格"><a href="# 为字体增加风格" class="headerlink" title="为字体增加风格"></a>为字体增加风格</h2><ul>
+<li>斜体风格 <code>font-style:italic;</code>或者<code>font-style:oblique;</code>。这两种风格看起来一样，除非确实非得区分斜体和倾斜文本，这对你非常重要，否则完全可以任选一种使用。</li>
+</ul>
+<h2 id="为字体增加颜色"><a href="# 为字体增加颜色" class="headerlink" title="为字体增加颜色"></a>为字体增加颜色</h2><ul>
+<li><p><code>color</code>属性可以改变字体颜色。 </p>
+</li>
+<li><p>红绿蓝按不同比例组合成各种颜色。</p>
+</li>
+<li><p><strong>按颜色名指定颜色</strong>  CSS 大约定义了 150 个颜色名，如”red”、”green”、”blue”等。颜色名不区分大小写。</p>
+</li>
+<li><p><strong>用红绿蓝值指定颜色</strong>  </p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="built_in">rgb</span>(<span class="number">80%</span>,<span class="number">40%</span>,<span class="number">0%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="built_in">rgb</span>(<span class="number">204</span>,<span class="number">102</span>,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>使用十六进制码指定颜色</strong>  每组 2 位数字分别代表红绿蓝分量，如果每一组分量中两位数字都相同，可以简写。例加，#ccbb00 可以缩写为 #cb0，或者#11eeaa 可以缩写为#1ea。不过，加果十六进制码是#ccbb10，则不能使用缩写。</li>
+</ul>
+<h2 id="增加文本装饰"><a href="# 增加文本装饰" class="headerlink" title="增加文本装饰"></a>增加文本装饰</h2><ul>
+<li><code>text-decoration</code>属性可以增加文本装饰。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">em</span> &#123;</span><br><span class="line">    <span class="comment">/* 为 &lt;em&gt; 元素添加删除线 */</span></span><br><span class="line">    <span class="attribute">text-decoration</span>:line-through;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">em</span> &#123;</span><br><span class="line">    <span class="comment">/* 一次可以设置多个装饰，为 &lt;em&gt; 元素添加下划线和上划线 */</span></span><br><span class="line">    <span class="attribute">text-decoration</span>:underline overline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">em</span> &#123;</span><br><span class="line">    <span class="comment">/* 如果文本继承了不想要的装饰，可以使用”none“来删去装饰 */</span></span><br><span class="line">    <span class="attribute">text-decoration</span>:none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果 <code>&lt;em&gt;</code> 有两个不同规则，一个指定上划线，一个指定下划线，它们不会累加。只有在同一个 <code>text-decoration</code> 声明中同时指定，才会得到两个装饰。</p>
+</li>
+<li><p>HTML 的 <code>&lt;del&gt;</code> 标签表示一些被从文档中删除的文字内容。比如可以在需要显示修改记录或者源代码差异的情况使用这个标签。这个标签通常（但不一定要）在文字上显示删除线。</p>
+</li>
+<li><p><code>&lt;ins&gt;</code>标签表示文档中添加的内容。这个标签通常（但不一定要）在文字上显示下划线。</p>
+</li>
+</ul>
+<img data-src="/archives/c10fa92e/image-20200801110239295.png" class>
     </div>
 
     
@@ -416,7 +554,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://feirouafeirou.github.io/archives/c10fa92e.html" title="读《Head First HTML 与 CSS》下">https://feirouafeirou.github.io/archives/c10fa92e.html</a>
+    <a href="https://feirouafeirou.github.io/archives/c10fa92e.html" title="读《Head First HTML 与 CSS》3">https://feirouafeirou.github.io/archives/c10fa92e.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -505,7 +643,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#加一点样式"><span class="nav-text">加一点样式 </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#把 CSS 放入 HTML"><span class="nav-text"> 把 CSS 放入 HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过图解研究选择器"><span class="nav-text">通过图解研究选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接到外部样式表"><span class="nav-text">链接到外部样式表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#来谈谈继承"><span class="nav-text">来谈谈继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个类选择器"><span class="nav-text">创建一个类选择器</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS 入门"><span class="nav-text">CSS 入门 </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#把 CSS 放入 HTML"><span class="nav-text"> 把 CSS 放入 HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过图解研究选择器"><span class="nav-text">通过图解研究选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接到外部样式表"><span class="nav-text">链接到外部样式表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#来谈谈继承"><span class="nav-text">来谈谈继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个类选择器"><span class="nav-text">创建一个类选择器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#增加字体和颜色模式"><span class="nav-text">增加字体和颜色模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字体系列"><span class="nav-text">字体系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用 CSS 指定字体系列"><span class="nav-text">使用 CSS 指定字体系列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入 web 字体"><span class="nav-text">引入 web 字体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整字体大小"><span class="nav-text">调整字体大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变字体粗细"><span class="nav-text">改变字体粗细</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为字体增加风格"><span class="nav-text">为字体增加风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为字体增加颜色"><span class="nav-text">为字体增加颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加文本装饰"><span class="nav-text">增加文本装饰</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -588,12 +726,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">41k</span>
+    <span title="站点总字数">44k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">38 分钟</span>
+    <span title="站点阅读时长">40 分钟</span>
 </div>
 
 <div class="translate-style">
