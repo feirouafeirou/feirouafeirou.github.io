@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/astronaut32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/astronaut16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic|Cinzel Decorative:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"feirouafeirou.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
+  <meta name="description" content="JavaScript WebAPI学习4 这篇笔记主要讲了窗口大小事件，两种定时器，this指向得问题，和刷新，获取URL等属性得方法，js同步和异步初学者写下得笔记，如有错误，欢迎前来指正">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 之 WebAPI 学习 4">
+<meta property="og:url" content="https://feirouafeirou.github.io/archives/45bca098.html">
+<meta property="og:site_name" content="wx的博客">
+<meta property="og:description" content="JavaScript WebAPI学习4 这篇笔记主要讲了窗口大小事件，两种定时器，this指向得问题，和刷新，获取URL等属性得方法，js同步和异步初学者写下得笔记，如有错误，欢迎前来指正">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/JavaScript%E4%B9%8BWebAPI%E5%AD%A6%E4%B9%A04/20200514221759839.png">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/JavaScript%E4%B9%8BWebAPI%E5%AD%A6%E4%B9%A04/20200514222006253.png">
+<meta property="article:published_time" content="2020-08-10T23:59:53.000Z">
+<meta property="article:modified_time" content="2020-08-14T11:19:02.047Z">
+<meta property="article:author" content="wx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://feirouafeirou.github.io/archives/JavaScript%E4%B9%8BWebAPI%E5%AD%A6%E4%B9%A04/20200514221759839.png">
+
+<link rel="canonical" href="https://feirouafeirou.github.io/archives/45bca098.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JavaScript 之 WebAPI 学习 4 | wx的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">wx的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://feirouafeirou.github.io/archives/45bca098.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.gif">
+      <meta itemprop="name" content="wx">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wx的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript 之 WebAPI 学习 4
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-11 07:59:53" itemprop="dateCreated datePublished" datetime="2020-08-11T07:59:53+08:00">2020-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-14 19:19:02" itemprop="dateModified" datetime="2020-08-14T19:19:02+08:00">2020-08-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+          
+          <br>
+            <span id="/archives/45bca098.html" class="post-meta-item leancloud_visitors" data-flag-title="JavaScript 之 WebAPI 学习 4" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/45bca098.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/45bca098.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="JavaScript-WebAPI 学习 4"><a href="#JavaScript-WebAPI 学习 4" class="headerlink" title="JavaScript WebAPI 学习 4"></a>JavaScript WebAPI 学习 4</h1><blockquote>
+<p>这篇笔记主要讲了窗口大小事件，两种定时器，this 指向得问题，和刷新，获取 URL 等属性得方法，js 同步和异步 <br> 初学者写下得笔记，如有错误，欢迎前来指正</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="BOM 浏览器对象模型"><a href="#BOM 浏览器对象模型" class="headerlink" title="BOM 浏览器对象模型"></a>BOM 浏览器对象模型</h2><ul>
+<li>BOM：浏览器对象模型，例如刷新，后退等操作</li>
+<li>BOM 兼容性较差</li>
+<li>BOM 顶级对象是 window</li>
+<li>BOM 浏览器窗口进行交互的一些对象</li>
+</ul>
+<h3 id="window- 对象"><a href="#window- 对象" class="headerlink" title="window 对象"></a>window 对象</h3><ul>
+<li>BOM 构成：</li>
+</ul>
+<p><img data-src="JavaScript%E4%B9%8BWebAPI%E5%AD%A6%E4%B9%A04/20200514221759839.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>他是 js 访问浏览器窗口的一个接口</li>
+<li>他是一个全局对象，定义在全局作用域中的变量或者函数都会变成 window 对象的属性和方法 (在调用时可以省略 window)</li>
+<li>alert 也是 window 的方法，完整写法 (window.alert)</li>
+<li>window 下面有一个特殊属性 window.name (所以声明变量时不要用 name 作为变量名，即使他不是关键字)</li>
+</ul>
+<h4 id="window- 对象常用事件"><a href="#window- 对象常用事件" class="headerlink" title="window 对象常用事件"></a>window 对象常用事件</h4><ul>
+<li><p>窗口加载事件：<code>window.onload = function() {}</code> 或者 <code>window.addEventListener(&#39;load&#39;,function() {})</code></p>
+</li>
+<li><p>窗口加载事件是在文档内容完全加载后在调用这个事件</p>
+</li>
+<li><p>使用场景：之前的 script 必须写在网页的最下面，这里我们可以把原来的代码放在这个事件里，我们就可以随心所欲的把 script 标签 移动到任何地方</p>
+</li>
+<li><p>传统的 <code>window.onload</code> 只能写一次，否则后面的会把前面的覆盖掉，所以推荐 <code>window.addEventListener</code> 方式</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>窗口加载事件：<code>document.addEventListener(&#39;DOMcontentLoaded&#39;,function() {})</code></li>
+<li>DOMcontentLoaded 在 DOM 加载完成触发，不包括样式表(css)，图片，flash 等</li>
+<li>兼容性：IE9 以上支持</li>
+<li>因为不需要等到加载图片等就可以完成，所以速度要比 onnload 快</li>
+</ul>
+<h4 id="调整窗口大小事件"><a href="# 调整窗口大小事件" class="headerlink" title="调整窗口大小事件"></a>调整窗口大小事件</h4><ul>
+<li><p>调整窗口大小事件：<code>window.onresize</code> 或者 <code>window.addEventListener(&#39;resize&#39;,function() {})</code></p>
+</li>
+<li><p>当窗口大小发生改变时就触发这个事件</p>
+</li>
+<li><p>应用于响应式布局</p>
+</li>
+<li><p><code>window.innerWidth</code> 获取当前屏幕宽度，和上面来一起使用，应用于响应式布局</p>
+</li>
+</ul>
+<h4 id="定时器"><a href="# 定时器" class="headerlink" title="定时器"></a>定时器</h4><ul>
+<li>定时器分为两种 <code>setTimeout()</code> 和 <code>setInterval()</code></li>
+</ul>
+<h5 id="定时器之 -setTimeout"><a href="# 定时器之 -setTimeout" class="headerlink" title="定时器之 setTimeout()"></a>定时器之 setTimeout()</h5><ul>
+<li>使用格式：<code>window.setTimeout(调用函数, [延迟的毫秒数])</code></li>
+<li>在延迟毫秒数之后调用函数</li>
+<li>window 在使用时可以省略</li>
+<li>代码示例：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2 秒钟后调用前面的 function 函数</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;, <span class="number">2000</span>);</span><br><span class="line"><span class="comment">// 还有一种写法 (不提倡)</span></span><br><span class="line">setTimeout(<span class="string">'函数名()'</span>, <span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一个页面上可能有多个不同的定时器，为了区分他们，我们给定时器加标志符</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在就有两个不同的定时器</span></span><br><span class="line"><span class="keyword">var</span> timer1 = setTimeout(callback, <span class="number">3000</span>);</span><br><span class="line"><span class="keyword">var</span> timer2 = setTimeout(callback, <span class="number">5000</span>);</span><br></pre></td></tr></table></figure>
+
+<h6 id="回调函数"><a href="# 回调函数" class="headerlink" title="回调函数"></a>回调函数</h6><ul>
+<li>正常函数都是根据代码顺序进行的，回调函数是运行到某个地方，回头调用这个函数</li>
+<li>例如计时器里的函数，或者注册事件里的函数都是回调函数</li>
+</ul>
+<h6 id="案例：自动关闭的广告"><a href="# 案例：自动关闭的广告" class="headerlink" title="案例：自动关闭的广告"></a>案例：自动关闭的广告</h6><ul>
+<li>打开页面显示一个广告，5 秒后自动关闭广告</li>
+<li>代码示例：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.Ad</span> &#123;</span></span><br><span class="line">    height: 200px;</span><br><span class="line">    width: 200px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    text-align: center;</span><br><span class="line">    line-height: 200px;</span><br><span class="line">    font-size: 25px;</span><br><span class="line">    font-weight: 700;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"Ad"</span>&gt;</span>我是广告！<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> Ad = <span class="built_in">document</span>.querySelector(<span class="string">'.Ad'</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">disable</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">        Ad.style.display = <span class="string">'none'</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line">    setTimeout(disable, 5000);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="停止定时器 -clserTimeout"><a href="# 停止定时器 -clserTimeout" class="headerlink" title="停止定时器 (clserTimeout)"></a>停止定时器 (clserTimeout)</h6><ul>
+<li>把这个定时器停止掉</li>
+<li>使用方法：<code>window.clearTimeout(timeoutID)</code></li>
+<li>代码示例：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,<span class="number">1024</span>);</span><br><span class="line">clearTimeout(timer);</span><br></pre></td></tr></table></figure>
+
+<h5 id="定时器之 -setInterval"><a href="# 定时器之 -setInterval" class="headerlink" title="定时器之 setInterval()"></a>定时器之 setInterval()</h5><ul>
+<li><p>使用格式：<code>window.setInterval(回调函数,[间隔毫秒数])</code></p>
+</li>
+<li><p>setInterval 是每隔这个时间就调用一次回调函数</p>
+</li>
+<li><p>和上面的函数的基本操作是一样的</p>
+<ul>
+<li>代码示例：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'每隔一秒我输出一次'</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<h6 id="定时器案例：倒计时"><a href="# 定时器案例：倒计时" class="headerlink" title="定时器案例：倒计时"></a>定时器案例：倒计时</h6><ul>
+<li>实现一个类似于京东倒计时秒杀的效果</li>
+<li>大概思路就是有一个函数计算当前时间和我们倒计时时间的差的函数，然后每隔 1 秒就进行一次刷新，就会出现倒计时的效果</li>
+<li>代码示例：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  ul li &#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">    height: 50px;</span><br><span class="line">    width: 50px;</span><br><span class="line">    background-color: black;</span><br><span class="line">    float: left;</span><br><span class="line">    margin-left: 20px;</span><br><span class="line">    font-size: 20px;</span><br><span class="line">    color: aliceblue;</span><br><span class="line">    text-align: center;</span><br><span class="line">    line-height: 50px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> lis = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> inputTime = +<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2020-5-9 18:00:00'</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 之前调用一次，防止第一次刷新页面有空白</span></span></span><br><span class="line">    countDown();</span><br><span class="line">    setInterval(countDown, 1000);</span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">countDown</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> nowTime = +<span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">// 返回的是当前时间总的毫秒数</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">var</span> times = (inputTime - nowTime) / <span class="number">1000</span>; <span class="comment">// times 是剩余时间总的秒数</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> h = <span class="built_in">parseInt</span>(times / <span class="number">60</span> / <span class="number">60</span> % <span class="number">24</span>); <span class="comment">// 时</span></span></span><br><span class="line"><span class="actionscript">      h = h &lt; <span class="number">10</span> ? <span class="string">'0'</span> + h : h;</span></span><br><span class="line"><span class="actionscript">      lis[<span class="number">0</span>].innerHTML = h; <span class="comment">// 把剩余的小时给 小时黑色盒子</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> m = <span class="built_in">parseInt</span>(times / <span class="number">60</span> % <span class="number">60</span>); <span class="comment">// 分</span></span></span><br><span class="line"><span class="actionscript">      m = m &lt; <span class="number">10</span> ? <span class="string">'0'</span> + m : m;</span></span><br><span class="line">      lis[1].innerHTML = m;</span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> s = <span class="built_in">parseInt</span>(times % <span class="number">60</span>); <span class="comment">// 当前的秒</span></span></span><br><span class="line"><span class="actionscript">      s = s &lt; <span class="number">10</span> ? <span class="string">'0'</span> + s : s;</span></span><br><span class="line">      lis[2].innerHTML = s;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="停止定时器：clearInterval"><a href="# 停止定时器：clearInterval" class="headerlink" title="停止定时器：clearInterval"></a>停止定时器：clearInterval</h6><ul>
+<li>使用方法：<code>window.clearInterval(intervalID)</code></li>
+<li>intervalID 是定时器的名字</li>
+<li>注意变量作用域的问题，想要提升变量的作用域，可以定义一个同名全局变量并赋初值为 null</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,<span class="number">1024</span>);</span><br><span class="line">clearInterval(timer);</span><br></pre></td></tr></table></figure>
+
+<h5 id="发送验证码后倒计时效果"><a href="# 发送验证码后倒计时效果" class="headerlink" title="发送验证码后倒计时效果"></a>发送验证码后倒计时效果</h5><ul>
+<li>点击按钮后禁用 disable 为 true</li>
+<li>上面只要有一个按钮就可以</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 倒计时 5 秒</span></span><br><span class="line"><span class="keyword">var</span> time = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span><br><span class="line">btn.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  btn.disabled = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    time--;</span><br><span class="line">    btn.innerHTML = <span class="string">'还剩'</span> + time + <span class="string">'秒后重试'</span>;</span><br><span class="line">    <span class="comment">// 时间为 0 后，清除定时器，复原按钮</span></span><br><span class="line">    <span class="keyword">if</span> (time == <span class="number">0</span>) &#123;</span><br><span class="line">      clearInterval(timer);</span><br><span class="line">      btn.innerHTML = <span class="string">'发送验证码'</span>;</span><br><span class="line">      btn.disabled = <span class="literal">false</span>;</span><br><span class="line">      time = <span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="this 指向问题"><a href="#this 指向问题" class="headerlink" title="this 指向问题"></a>this 指向问题</h3><ul>
+<li>this 指向调用它的对象</li>
+<li>全局作用下 this 指向全局对象 window (定时器里的 this 也指向 window)</li>
+<li>方法中谁调用这个函数 this 指向谁</li>
+<li>例如：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    sayhi: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.sayhi();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这里的 this 指向 o</li>
+</ul>
+<hr>
+<ul>
+<li>构造函数里的 this 指向实例化的对象 fun</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fun = <span class="keyword">new</span> Fun();</span><br></pre></td></tr></table></figure>
+
+<h3 id="JS 同步和异步"><a href="#JS 同步和异步" class="headerlink" title="JS 同步和异步"></a>JS 同步和异步</h3><ul>
+<li><p>JS 是单线程语言，为了防止一个线程占用系统资源过多，系统允许 JS 创建多个线程，JS 里就出现了同步和异步</p>
+</li>
+<li><p>同步：上一个任务结束后才能执行下一个任务</p>
+</li>
+<li><p>异步：可以同时进行多个任务</p>
+<ul>
+<li>异步实例：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line"><span class="comment">// 输出：1 3 2</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>正常同步的话应该输出 1 2 3</li>
+<li>但是异步的话输出的就是 1 3 2，因为 2 所需要的时间长，所以 JS 会先执行 log(3)</li>
+</ul>
+<h4 id="同步异步执行过程"><a href="# 同步异步执行过程" class="headerlink" title="同步异步执行过程"></a>同步异步执行过程</h4><ul>
+<li><p>js 把所有任务分成 同步任务和异步任务</p>
+</li>
+<li><p>同步任务放在主线程上执行栈里执行</p>
+</li>
+<li><p>异步任务是通过回调函数实现的</p>
+</li>
+<li><p>异步任务包括：</p>
+<ul>
+<li>普通事件：click，resize 等</li>
+<li>资源加载：load，error 等</li>
+<li>定时器：setInterval，setTimeout</li>
+</ul>
+</li>
+</ul>
+<h5 id="JS 执行机制"><a href="#JS 执行机制" class="headerlink" title="JS 执行机制"></a>JS 执行机制</h5><ul>
+<li><p>先执行同步任务，碰到回调函数把函数放到任务队列里，然后主线程执行完后再去执行任务队列</p>
+</li>
+<li><p>多个异步任务时，会有一个叫异步进程处理的东西来处理事件</p>
+<ul>
+<li>比如一个 onclick 事件，异步进程处理就会等待鼠标点击，鼠标点击后再把函数放入任务队列，然后执行这个函数</li>
+<li>例如一个计时器(setTimeout)，异步进程处理就会等待几秒后然后再把函数放入任务队列中</li>
+</ul>
+</li>
+<li><p>事件循环：主线程不断向任务队列中放入事件，执行事件的情况</p>
+</li>
+</ul>
+<h3 id="location- 对象"><a href="#location- 对象" class="headerlink" title="location 对象"></a>location 对象</h3><ul>
+<li><p>location 对象用于获取或者设置窗体的 URL</p>
+</li>
+<li><p>返回的是一个对象</p>
+</li>
+<li><p>URL 语法格式：<br><img data-src="JavaScript%E4%B9%8BWebAPI%E5%AD%A6%E4%B9%A04/20200514222006253.png" alt="- == 这里有张图 =="></p>
+</li>
+<li><p>location 对象的属性：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>location 对象的属性</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>location.herf</td>
+<td>获取或者设置整个 URL</td>
+</tr>
+<tr>
+<td>location.host</td>
+<td>返回主机域名</td>
+</tr>
+<tr>
+<td>location.port</td>
+<td>返回端口号，若没有则返回空字符串</td>
+</tr>
+<tr>
+<td>location.pathname</td>
+<td>返回路径</td>
+</tr>
+<tr>
+<td>location.search</td>
+<td>返回参数 <strong>重要</strong></td>
+</tr>
+<tr>
+<td>location.hash</td>
+<td>返回片段 (# 后面的内容) 常见于链接 锚点</td>
+</tr>
+</tbody></table>
+<h4 id="location 对象实例：5 秒后跳转页面"><a href="#location 对象实例：5 秒后跳转页面" class="headerlink" title="location 对象实例：5 秒后跳转页面"></a>location 对象实例：5 秒后跳转页面</h4><ul>
+<li>点击按钮跳转到百度的页面</li>
+<li>代码示例：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = <span class="number">5</span>;</span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  div.innerHTML = <span class="string">'您将在'</span> + timer + <span class="string">'跳转'</span>;</span><br><span class="line">  timer--;</span><br><span class="line">  <span class="keyword">if</span>(timer==<span class="number">0</span>) location.herf = <span class="string">'https://www.baidu.com'</span>;</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="location 对象实例：不同页面之间传递参数"><a href="#location 对象实例：不同页面之间传递参数" class="headerlink" title="location 对象实例：不同页面之间传递参数"></a>location 对象实例：不同页面之间传递参数</h4><ul>
+<li><p>使用 URL 里面的 location.search 参数来传递表单参数</p>
+<ul>
+<li>第一个页面：登陆页面 login.html</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"index.html"</span>&gt;</span></span><br><span class="line">        用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"uname"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第二个页面：index.html</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(location.search);</span><br><span class="line"><span class="comment">// 获取的值是带问号的参数，下面需要剪切字符串</span></span><br><span class="line"><span class="comment">// substr('起始的位置', 截取几个字符) 第二个参数没有的话默认截到末尾</span></span><br><span class="line"><span class="keyword">var</span> str = location.search.substr(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 下面利用等号 = 分割为数组</span></span><br><span class="line"><span class="comment">// split('=')</span></span><br><span class="line"><span class="keyword">var</span> arr = str.split(<span class="string">'='</span>);</span><br><span class="line">alert(<span class="string">'欢迎'</span> + arr[<span class="number">1</span>] + <span class="string">'登录'</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="location 对象常见方法"><a href="#location 对象常见方法" class="headerlink" title="location 对象常见方法"></a>location 对象常见方法</h4><table>
+<thead>
+<tr>
+<th>location 对象的方法</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>location.assign()</td>
+<td>和 herf 一样可以跳转页面 (可以后退)</td>
+</tr>
+<tr>
+<td>location.replace()</td>
+<td>替换当前页面，因为不记录历史，所以不能后退页面</td>
+</tr>
+<tr>
+<td>location.reload()</td>
+<td>重新加载页面相当于刷新按钮，如果参数为 true 则强制刷新 (ctrl+F5)</td>
+</tr>
+</tbody></table>
+<h3 id="navigator- 对象"><a href="#navigator- 对象" class="headerlink" title="navigator 对象"></a>navigator 对象</h3><ul>
+<li>获取浏览器信息</li>
+<li>主要是里面的 userAgent 属性，可以看到浏览器得情况</li>
+<li>可以通过里面的信息来判断应该打开电脑端页面还是手机端页面</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="regexp">/Android|webOS|iPhone|iPod|BlackBerry/i</span>.test(navigator.userAgent)) &#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"https://www.baidu.com/"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"http://news.baidu.com/"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="history- 对象"><a href="#history- 对象" class="headerlink" title="history 对象"></a>history 对象</h3><table>
+<thead>
+<tr>
+<th>history 对象</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>history.back()</td>
+<td>实现后退功能</td>
+</tr>
+<tr>
+<td>history.forward()</td>
+<td>前进功能</td>
+</tr>
+<tr>
+<td>history.go(参数)</td>
+<td>前进后退功能，参数为 1 前进一个页面，参数为 -1 后退一个页面</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>感谢各位打赏的小伙伴</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="wx 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="wx 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>wx
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://feirouafeirou.github.io/archives/45bca098.html" title="JavaScript 之 WebAPI 学习 4">https://feirouafeirou.github.io/archives/45bca098.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/dbd8353b.html" rel="prev" title="JavaScript 之 WebAPI 学习 3">
+      <i class="fa fa-chevron-left"></i> JavaScript 之 WebAPI 学习 3
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/archives/32bb900e.html" rel="next" title="JavaScript 之 WebAPI 学习 5">
+      JavaScript 之 WebAPI 学习 5 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-WebAPI 学习 4"><span class="nav-text">JavaScript WebAPI 学习 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM 浏览器对象模型"><span class="nav-text">BOM 浏览器对象模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window- 对象"><span class="nav-text">window 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#window- 对象常用事件"><span class="nav-text">window 对象常用事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整窗口大小事件"><span class="nav-text">调整窗口大小事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定时器"><span class="nav-text">定时器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定时器之 -setTimeout"><span class="nav-text">定时器之 setTimeout()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#回调函数"><span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#案例：自动关闭的广告"><span class="nav-text">案例：自动关闭的广告</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#停止定时器 -clserTimeout"><span class="nav-text">停止定时器 (clserTimeout)</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定时器之 -setInterval"><span class="nav-text">定时器之 setInterval()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#定时器案例：倒计时"><span class="nav-text">定时器案例：倒计时</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#停止定时器：clearInterval"><span class="nav-text">停止定时器：clearInterval</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#发送验证码后倒计时效果"><span class="nav-text">发送验证码后倒计时效果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this 指向问题"><span class="nav-text">this 指向问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS 同步和异步"><span class="nav-text">JS 同步和异步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同步异步执行过程"><span class="nav-text">同步异步执行过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JS 执行机制"><span class="nav-text">JS 执行机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location- 对象"><span class="nav-text">location 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#location 对象实例：5 秒后跳转页面"><span class="nav-text">location 对象实例：5 秒后跳转页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location 对象实例：不同页面之间传递参数"><span class="nav-text">location 对象实例：不同页面之间传递参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location 对象常见方法"><span class="nav-text">location 对象常见方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigator- 对象"><span class="nav-text">navigator 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history- 对象"><span class="nav-text">history 对象</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="wx" src="/images/touxiang.gif">
+  <p class="site-author-name" itemprop="name">wx</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/feirouafeirou" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;feirouafeirou" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/1740424740/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="微博 → https:&#x2F;&#x2F;weibo.com&#x2F;1740424740&#x2F;profile?rightmod&#x3D;1&amp;wvr&#x3D;6&amp;mod&#x3D;personinfo&amp;is_all&#x3D;1" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-weibo fa-fw"></i>微博</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://feirouafeirou.github.io/" title="https:&#x2F;&#x2F;feirouafeirou.github.io">wx的博客</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wx</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">109k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:39</span>
+</div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "https://feirouafeirou.github.io/"; //Cookie地址, 一定要设定, 通常为你的网址
+var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
+var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
+var translateButtonId = "translateLink"; //默认互换id
+translateInitilization();
+</script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 26171,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'puzQn5yHhkbtBj2VGFbqJ4FE-MdYXbMMI',
+      appKey     : 'lmcgKM2surcxNxMRiqInHjkU',
+      placeholder: "Just go go",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class="fa fa-chevron-down"></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class="fa fa-chevron-up"></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"/>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"/>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class="fas fa-ellipsis-v"></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+<!-- 数字雨 -->
+<!-- <canvas id="canvas" width="1440" height="900" ></canvas> -->
+<!-- <script type="text/javascript" src="/js/src/DigitalRain.js"></script> -->
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<!-- Live2D看板娘 -->
+<!-- <script src="/live2d-widget/autoload.js"></script> -->
+<script src="https://feirouafeirou.github.io/live2d-widget/autoload.js"></script>
+<!-- 网页音乐播放器 -->
+<!-- <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script> -->
+</body>
+
+</html>
