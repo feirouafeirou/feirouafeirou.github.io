@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/astronaut32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/astronaut16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic|Cinzel Decorative:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"feirouafeirou.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
+  <meta name="description" content="交互设计 - 菲茨定律(Fitts’ Law)*”任意一点移动到目标中心位置所需时间与该点到目标的距离和大小有关，距离越大时间越长，目标越大时间越短”* 菲茨定律用数学公式表达为时间 T &#x3D; a + b log2(D&#x2F;W+1)，T&#x3D; 移动设备所需时长；a,b 是经验常量，D&#x3D; 设备起始位置与目标位置之间的距离；W&#x3D; 目标的宽度大小(目标的大小)。 T &#x3D; a + b log2(D&#x2F;W+1) 根据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菲茨定律">
+<meta property="og:url" content="https://feirouafeirou.github.io/archives/5e0e6698.html">
+<meta property="og:site_name" content="wx的博客">
+<meta property="og:description" content="交互设计 - 菲茨定律(Fitts’ Law)*”任意一点移动到目标中心位置所需时间与该点到目标的距离和大小有关，距离越大时间越长，目标越大时间越短”* 菲茨定律用数学公式表达为时间 T &#x3D; a + b log2(D&#x2F;W+1)，T&#x3D; 移动设备所需时长；a,b 是经验常量，D&#x3D; 设备起始位置与目标位置之间的距离；W&#x3D; 目标的宽度大小(目标的大小)。 T &#x3D; a + b log2(D&#x2F;W+1) 根据">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-207de52e2475c9e17bbbe889a8d56681_720w.jpg">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-a6181f0431f2718683d16329036f3fef_720w.jpg">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-d12bcec441f66b6c6a9b400cf7bf0f5f_720w.jpg">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-0b367dbc5f5f0ddd4d29dbc91d314e92_720w.jpg">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-ae888b26bc2aae36ad3393ea9b14dbe2_720w.jpg">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-5206de865e4ba949c357d669902a60eb_720w.jpg">
+<meta property="og:image" content="https://feirouafeirou.github.io/archives/%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-5d5b1bbf2e3b65e4f6c9ed430df01c76_720w.jpg">
+<meta property="article:published_time" content="2021-03-16T06:06:37.000Z">
+<meta property="article:modified_time" content="2021-03-16T06:13:40.425Z">
+<meta property="article:author" content="wx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://feirouafeirou.github.io/archives/%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-207de52e2475c9e17bbbe889a8d56681_720w.jpg">
+
+<link rel="canonical" href="https://feirouafeirou.github.io/archives/5e0e6698.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>菲茨定律 | wx的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">wx的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://feirouafeirou.github.io/archives/5e0e6698.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.gif">
+      <meta itemprop="name" content="wx">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wx的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          菲茨定律
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-16 14:06:37 / 修改时间：14:13:40" itemprop="dateCreated datePublished" datetime="2021-03-16T14:06:37+08:00">2021-03-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+                </span>
+            </span>
+
+          
+          
+          <br>
+            <span id="/archives/5e0e6698.html" class="post-meta-item leancloud_visitors" data-flag-title="菲茨定律" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/5e0e6698.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/5e0e6698.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="交互设计 - 菲茨定律 -Fitts’-Law"><a href="# 交互设计 - 菲茨定律 -Fitts’-Law" class="headerlink" title="交互设计 - 菲茨定律 (Fitts’ Law)"></a> 交互设计 - 菲茨定律(Fitts’ Law)</h1><p><strong>*”任意一点移动到目标中心位置所需时间与该点到目标的距离和大小有关，距离越大时间越长，目标越大时间越短”*</strong></p>
+<p>菲茨定律用数学公式表达为时间 T = a + b log2(D/W+1)，T= 移动设备所需时长；a,b 是经验常量，D= 设备起始位置与目标位置之间的距离；W= 目标的宽度大小(目标的大小)。</p>
+<p><img data-src="%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-207de52e2475c9e17bbbe889a8d56681_720w.jpg" alt="img">T = a + b log2(D/W+1)</p>
+<p>根据以上公式，可以得出</p>
+<ol>
+<li>设备当前位置和目标位置的距离 D 越长，所用时间越长；</li>
+<li>目标的大小 W 越大，所用时间越短。</li>
+</ol>
+<p>费茨法则为人机交互提供了一个度量的法则，从而也为我们设计人机交互界面提供了科学依据，也就是告诉我们怎样设计一个界面可以让用户比较容易使用，提高用户的操作体验。从上面的公式中，我们可以得出一个结论：<strong>如果我们要想鼠标比较快速的命中目标可以采取两个措施，要么减少鼠标与目标之间的距离，要么使目标足够大。</strong></p>
+<h2 id="菲茨定律的启示："><a href="# 菲茨定律的启示：" class="headerlink" title="菲茨定律的启示："></a><strong>菲茨定律的启示：</strong></h2><ol>
+<li><em>按钮等可点击对象需要合理的大小尺寸。</em></li>
+<li><em>屏幕的边和角很适合放置像菜单栏和按钮这样的元素，因为边角是巨大的目标，它们无限高或无限宽，鼠标无法越过他们。即不管你移动了多远，鼠标最终会停在屏幕的边缘，并定位到按钮或菜单的上面。</em></li>
+<li><em>出现在用户正在操作的对象旁边的控制菜单（右键菜单）比下拉菜单或工具栏可以被打开得更快，因为不需要移动到屏幕的其他位置。</em></li>
+</ol>
+<h2 id="典型应用及案例"><a href="# 典型应用及案例" class="headerlink" title="典型应用及案例"></a><strong>典型应用及案例</strong></h2><p><strong>window 和 mac 系统菜单设计：增大目标大小以缩短定位时间（边缘无限大）</strong></p>
+<p>两大主流 OS 中又有非常好的案例：Mac 默认将底栏放到了屏幕的最下方；这样的话底栏就变得“无限可选中”，因为用户不能将光标移到底栏下方所以在向底栏方向做出大幅度移动后光标始终是落在底栏上的。</p>
+<p><img data-src="%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-a6181f0431f2718683d16329036f3fef_720w.jpg" alt="img">屏幕边缘，W 无限大，T 近似等于 0</p>
+<p>在 Windows 中，开始菜单在屏幕的左下角，这个角落是“无限可选中”的，因为不管用户朝左下角方向做多大幅度的摆动，光标总是会停在开始菜单按钮的上方。</p>
+<p><img data-src="%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-d12bcec441f66b6c6a9b400cf7bf0f5f_720w.jpg" alt="img">屏幕角落，W 无限大</p>
+<p>这方面最经典的例子是 Windows 操作系统和 MAC 操作系统中的应用程序菜单区域 (menu bar) 位置的设计。实际测试和理论计算结果都表明，在使用 MAC 操作系统 时，用户点击某个菜单所需的平均时间要比 Windows 上快 0.4 秒（《The humane Interface》Jef Raskin ）。</p>
+<p><img data-src="%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-0b367dbc5f5f0ddd4d29dbc91d314e92_720w.jpg" alt="img">MAC OS 的 menu bar 位于顶部边缘</p>
+<p><img data-src="%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-ae888b26bc2aae36ad3393ea9b14dbe2_720w.jpg" alt="img">windows os 的 menu bar 位于 title bar 下方</p>
+<p><strong>鼠标右击菜单设计：缩短当前位置到目标区域的距离</strong></p>
+<p>右键菜单技术（或上下文菜单）是采取这种思路的一个很好的例子。为了弹出这种菜单，用户只要将鼠标指针移动到需要对其进行操作的某个对象所占据的区域中并单击右键即可。而在一般情况下，这个移动的距离要远小于将鼠标指针移动到应用程序主窗口顶部的下拉菜单区域</p>
+<p><img data-src="%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-5206de865e4ba949c357d669902a60eb_720w.jpg" alt="img">右键菜单缩短了光标的移动距离 D, 提高了效率</p>
+<p><strong>网页设计中的应用</strong></p>
+<p>网页设计师最大的遗憾之一就是不能利用浏览器的边角和边缘作为可“无限可选中”的区域。不过设计师仍然可以按照菲茨定律在设计上做一些优化。</p>
+<ol>
+<li>将用户最有可能点击（或最想要）的按钮放大。例如，将”登陆”按钮设计的更大</li>
+<li>放大链接点击区域。在链接文字周围放置可点击的填充区域，这样用户想要点击的链接文本会有更大的容错性。</li>
+<li>将动作分类 – 如果相关的操作按钮靠近彼此的话，则不仅可以在视觉上增强用户对它们相关性的认知，还可以减少光标在它们之间移动所需的距离和时间。</li>
+</ol>
+<p><strong>移动端设计中的应用</strong></p>
+<p>移动端交互设计中也有很多案例应用了 Fitts’ Law。Android 系统中删除应用时，用户只需拖拽想要删除的应用到顶部删除，顶部 W 无穷大，增加了用户操作效率和精准度。</p>
+<p>Fitts’ Law 鼓励减少距离，增加目标大小以提升用户效率，但反过来应用也会有意想不到的效果，比如 iPhone 关机，不采用按钮点击，而采用滑动操作，这样虽然减低了用户操作效率，但增加用户操作时间可以起到警示用户谨慎操作的目的。</p>
+<p><img data-src="%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B/v2-5d5b1bbf2e3b65e4f6c9ed430df01c76_720w.jpg" alt="img">反例：iPhone 关机操作</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>感谢各位打赏的小伙伴</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="wx 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="wx 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>wx
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://feirouafeirou.github.io/archives/5e0e6698.html" title="菲茨定律">https://feirouafeirou.github.io/archives/5e0e6698.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/2aceb6e.html" rel="prev" title="X 世代、Y 世代、Z 世代是都是怎么回事？">
+      <i class="fa fa-chevron-left"></i> X 世代、Y 世代、Z 世代是都是怎么回事？
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#交互设计 - 菲茨定律 -Fitts’-Law"><span class="nav-text"> 交互设计 - 菲茨定律(Fitts’ Law)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#菲茨定律的启示："><span class="nav-text">菲茨定律的启示：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#典型应用及案例"><span class="nav-text">典型应用及案例</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="wx" src="/images/touxiang.gif">
+  <p class="site-author-name" itemprop="name">wx</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/feirouafeirou" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;feirouafeirou" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=1729013657&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;1729013657&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.woshipm.com/" title="http:&#x2F;&#x2F;www.woshipm.com" rel="external nofollow noopener noreferrer" target="_blank">人人都是产品经理</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.chanpin100.com/" title="http:&#x2F;&#x2F;www.chanpin100.com" rel="external nofollow noopener noreferrer" target="_blank">产品壹佰</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wx</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">156k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:22</span>
+</div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "https://feirouafeirou.github.io/"; //Cookie地址, 一定要设定, 通常为你的网址
+var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
+var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
+var translateButtonId = "translateLink"; //默认互换id
+translateInitilization();
+</script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 26171,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'puzQn5yHhkbtBj2VGFbqJ4FE-MdYXbMMI',
+      appKey     : 'lmcgKM2surcxNxMRiqInHjkU',
+      placeholder: "Just go go",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class="fa fa-chevron-down"></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class="fa fa-chevron-up"></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"/>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"/>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class="fas fa-ellipsis-v"></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+<!-- 数字雨 -->
+<!-- <canvas id="canvas" width="1440" height="900" ></canvas> -->
+<!-- <script type="text/javascript" src="/js/src/DigitalRain.js"></script> -->
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<!-- Live2D看板娘 -->
+<!-- <script src="/live2d-widget/autoload.js"></script> -->
+<script src="https://feirouafeirou.github.io/live2d-widget/autoload.js"></script>
+<!-- 网页音乐播放器 -->
+<!-- <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script> -->
+</body>
+
+</html>
