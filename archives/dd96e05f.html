@@ -5,51 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/tommy88/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/tommy88/images/astronaut32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/tommy88/images/astronaut16.png">
-  <link rel="mask-icon" href="/tommy88/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/astronaut32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/astronaut16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/tommy88/css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic|Cinzel Decorative:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/tommy88/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/tommy88/lib/pace/pace-theme-pace-theme-minimal.min.css">
-  <script src="/tommy88/lib/pace/pace.min.js"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"fat_fat_where_are_you.gitee.io","root":"/tommy88/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"fat_fat_where_are_you.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
   <meta name="description" content="什么是波士顿矩阵法 波士顿矩阵法是一个二乘二的矩阵，将公司的每一个战略事业单位（SBUs）标在一种2维的矩阵图上，从而显示出哪个SBUs提供高额的潜在收益，以及哪个SBUs是组织资源的漏斗。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="波士顿矩阵">
-<meta property="og:url" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f.html">
+<meta property="og:url" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f.html">
 <meta property="og:site_name" content="wx的博客">
 <meta property="og:description" content="什么是波士顿矩阵法 波士顿矩阵法是一个二乘二的矩阵，将公司的每一个战略事业单位（SBUs）标在一种2维的矩阵图上，从而显示出哪个SBUs提供高额的潜在收益，以及哪个SBUs是组织资源的漏斗。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-7852eadc5227619dd94869c172b9ead4_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-563ccc0403ce042c580c00dc3a58ec63_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-028291c2263b5c75a52d5fb57021b718_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-df5bc80588efdd8ca8b429aa9bd8e97f_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-73878150d5257189f1b4deed291c4d25_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-dff215c5475ebbea4d821cb654454da0_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-613f7792a08fee341edb2a377c984e66_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-c387dbfc2a64e225d52d73d604cbd648_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-41d8c05a4eb49cc2d74f2e679f5eba73_hd.jpg">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-dad85e8ed1cb4a7f5649abb3930d4a3d_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-7852eadc5227619dd94869c172b9ead4_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-563ccc0403ce042c580c00dc3a58ec63_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-028291c2263b5c75a52d5fb57021b718_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-df5bc80588efdd8ca8b429aa9bd8e97f_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-73878150d5257189f1b4deed291c4d25_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-dff215c5475ebbea4d821cb654454da0_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-613f7792a08fee341edb2a377c984e66_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-c387dbfc2a64e225d52d73d604cbd648_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-41d8c05a4eb49cc2d74f2e679f5eba73_hd.jpg">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-dad85e8ed1cb4a7f5649abb3930d4a3d_hd.jpg">
 <meta property="article:published_time" content="2020-09-12T12:42:47.000Z">
 <meta property="article:modified_time" content="2020-09-22T01:54:20.894Z">
 <meta property="article:author" content="wx">
 <meta property="article:tag" content="思维模式">
 <meta property="article:tag" content="产品定位">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f/v2-7852eadc5227619dd94869c172b9ead4_hd.jpg">
+<meta name="twitter:image" content="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f/v2-7852eadc5227619dd94869c172b9ead4_hd.jpg">
 
-<link rel="canonical" href="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f.html">
+<link rel="canonical" href="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f.html">
 
 
 <script id="page-configurations">
@@ -114,7 +114,7 @@
 
   <div class="site-meta">
 
-    <a href="/tommy88/" class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">wx的博客</h1>
       <span class="logo-line-after"><i></i></span>
@@ -135,22 +135,22 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/tommy88/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tommy88/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/tommy88/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/tommy88/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -203,10 +203,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f.html">
+    <link itemprop="mainEntityOfPage" href="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/tommy88/images/touxiang.gif">
+      <meta itemprop="image" content="/images/touxiang.gif">
       <meta itemprop="name" content="wx">
       <meta itemprop="description" content>
     </span>
@@ -241,14 +241,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/tommy88/categories/%E4%BA%A7%E5%93%81/" itemprop="url" rel="index"><span itemprop="name">产品</span></a>
+                  <a href="/categories/%E4%BA%A7%E5%93%81/" itemprop="url" rel="index"><span itemprop="name">产品</span></a>
                 </span>
             </span>
 
           
           
           <br>
-            <span id="/tommy88/archives/dd96e05f.html" class="post-meta-item leancloud_visitors" data-flag-title="波士顿矩阵" title="阅读次数">
+            <span id="/archives/dd96e05f.html" class="post-meta-item leancloud_visitors" data-flag-title="波士顿矩阵" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -263,8 +263,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/tommy88/archives/dd96e05f.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/tommy88/archives/dd96e05f.html" itemprop="commentCount"></span>
+    <a title="valine" href="/archives/dd96e05f.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/dd96e05f.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -324,7 +324,7 @@
 <p>备注：高市场增长率的销售额至少达到 10% 的年增长率</p>
 </blockquote>
 <p>第四步：确定横坐标“相对市场占有率”的一个标准线，从而将“相对市场占有率”划分为高、低两个区域。</p>
-<img data-src="/tommy88/archives/dd96e05f/v2-7852eadc5227619dd94869c172b9ead4_hd.jpg" class>
+<img data-src="/archives/dd96e05f/v2-7852eadc5227619dd94869c172b9ead4_hd.jpg" class>
 
 
 
@@ -337,7 +337,7 @@
 <p>四是激光焊接镁合金横梁模块)</p>
 <p>五是排档杆类(手动排档总成系列)。</p>
 <p><strong>和达公司产品波士顿矩阵图:</strong></p>
-  <img data-src="/tommy88/archives/dd96e05f/v2-563ccc0403ce042c580c00dc3a58ec63_hd.jpg" class>
+  <img data-src="/archives/dd96e05f/v2-563ccc0403ce042c580c00dc3a58ec63_hd.jpg" class>
 
 
 
@@ -357,25 +357,25 @@
 <p>通过对两两属性的正负排列组合，得到四种不同性质的类型产品：<strong>双高（明星类产品）、双低（瘦狗类产品）、高低（问题类产品）、低高（现金牛类产品）。</strong></p>
 <p>在现实中，我们也常运用波士顿矩阵分析一些其他的样本，比如在本文运用波士顿矩阵尝试分析一下用户数据。<strong>这里用 </strong><a href="https://link.zhihu.com/?target=https%3A//me.bdp.cn/home.html" rel="external nofollow noopener noreferrer" target="_blank">BDP</a><strong> 作为样本数据分析工具~</strong></p>
 <p>1、<strong>首先，</strong>准备样本数据，这里采用某餐厅的客户数据作为样本。</p>
-  <img data-src="/tommy88/archives/dd96e05f/v2-028291c2263b5c75a52d5fb57021b718_hd.jpg" class>
+  <img data-src="/archives/dd96e05f/v2-028291c2263b5c75a52d5fb57021b718_hd.jpg" class>
 
 <p>2、<strong>其次</strong>，将客户数据与订单数据进行关联，得到客户的订单数据~</p>
-  <img data-src="/tommy88/archives/dd96e05f/v2-df5bc80588efdd8ca8b429aa9bd8e97f_hd.jpg" class>
+  <img data-src="/archives/dd96e05f/v2-df5bc80588efdd8ca8b429aa9bd8e97f_hd.jpg" class>
 
 
 
 <p>新增 1 个字段：均价（即客单价）</p>
-  <img data-src="/tommy88/archives/dd96e05f/v2-73878150d5257189f1b4deed291c4d25_hd.jpg" class>
+  <img data-src="/archives/dd96e05f/v2-73878150d5257189f1b4deed291c4d25_hd.jpg" class>
 
 <p>3、利用 <strong> 气泡图 </strong>（操作可参考：<a href="https://zhuanlan.zhihu.com/p/26077192" target="_blank" rel="external nofollow noopener noreferrer"> 只需一步，散点图就可以秒变气泡图，别不信！</a>）来进行波士顿矩阵分析用户画像，这里增加 <strong> 两个辅助线</strong>——a：平均金额 =500 元，b: 就餐次数 =5 次。</p>
-  <img data-src="/tommy88/archives/dd96e05f/v2-dff215c5475ebbea4d821cb654454da0_hd.jpg" class>
+  <img data-src="/archives/dd96e05f/v2-dff215c5475ebbea4d821cb654454da0_hd.jpg" class>
 
 
 
 <p>最后我们得到的气泡图如下：</p>
-<p>​    <img data-src="/tommy88/archives/dd96e05f/v2-613f7792a08fee341edb2a377c984e66_hd.jpg" class></p>
+<p>​    <img data-src="/archives/dd96e05f/v2-613f7792a08fee341edb2a377c984e66_hd.jpg" class></p>
 <p>4、根据散点图，我们可以大致分析出这个餐厅的用户画像~</p>
-<p>​    <img data-src="/tommy88/archives/dd96e05f/v2-c387dbfc2a64e225d52d73d604cbd648_hd.jpg" class></p>
+<p>​    <img data-src="/archives/dd96e05f/v2-c387dbfc2a64e225d52d73d604cbd648_hd.jpg" class></p>
 <p>根据波士顿分析，我们就把 <strong> 频次（就餐次数）和力度（平均金额）</strong>两个属性不同的用户分析出来了，如：</p>
 <ul>
 <li><strong>消费超过 5 次，每次消费力度平均超过 500 元的客户 </strong>，通过波士顿矩阵判定为<strong> 明星客户</strong>，这类客户需要我们重点关注，并给予最高的礼遇；</li>
@@ -383,9 +383,9 @@
 <li><strong>消费不足 5 次，但每次消费力度超过 500 元的客户 </strong>，则是<strong> 问题客户</strong>，这类客户最有希望转化为明星客户，但是因为客户存在一定的潜在问题或规律，导致消费频次不高，这类客户需要利用客服进行重点跟进和长期跟踪；</li>
 <li><strong>消费不足 5 次，消费力度也没有超过 500 元的客户 </strong>，就是属于<strong> 瘦狗客户</strong>，这类客户通常占企业客户的大多数，只需要一般性维护，不需要投入重点维系；</li>
 </ul>
-<p>​    <img data-src="/tommy88/archives/dd96e05f/v2-41d8c05a4eb49cc2d74f2e679f5eba73_hd.jpg" class></p>
+<p>​    <img data-src="/archives/dd96e05f/v2-41d8c05a4eb49cc2d74f2e679f5eba73_hd.jpg" class></p>
 <p>同样的波士顿矩阵分析适用于其他维度，比如 <strong> 消费力度和消费周期</strong>，用来找到最近消费的客户，以及最近不常来的客户，一起来分析我们的明星客户是否在流失，现金牛客户是否在增长。</p>
-<p>​    <img data-src="/tommy88/archives/dd96e05f/v2-dad85e8ed1cb4a7f5649abb3930d4a3d_hd.jpg" class></p>
+<p>​    <img data-src="/archives/dd96e05f/v2-dad85e8ed1cb4a7f5649abb3930d4a3d_hd.jpg" class></p>
 <blockquote>
 <p>本文转载自<a href="https://www.zhihu.com/question/20459847" target="_blank" rel="external nofollow noopener noreferrer">https://www.zhihu.com/question/20459847</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/26932634" target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/26932634</a></p>
@@ -400,19 +400,19 @@
   <div class="popular-posts-header">相关文章推荐</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\tommy88\archives\d5366326.html" rel="bookmark">MECE 原则</a></div>
+      <div class="popular-posts-title"><a href="\archives\d5366326.html" rel="bookmark">MECE 原则</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\tommy88\archives\4a9a2d5f.html" rel="bookmark">5W2H 分析法</a></div>
+      <div class="popular-posts-title"><a href="\archives\4a9a2d5f.html" rel="bookmark">5W2H 分析法</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\tommy88\archives\394b329c.html" rel="bookmark">Kano 模型</a></div>
+      <div class="popular-posts-title"><a href="\archives\394b329c.html" rel="bookmark">Kano 模型</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\tommy88\archives\5b526ed5.html" rel="bookmark">漏斗模型</a></div>
+      <div class="popular-posts-title"><a href="\archives\5b526ed5.html" rel="bookmark">漏斗模型</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\tommy88\archives\629074ab.html" rel="bookmark">三大分析法 --SWOT、PEST、波特五力</a></div>
+      <div class="popular-posts-title"><a href="\archives\629074ab.html" rel="bookmark">三大分析法 --SWOT、PEST、波特五力</a></div>
     </li>
   </ul>
 
@@ -424,12 +424,12 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/tommy88/images/wechatpay.png" alt="wx 微信支付">
+        <img src="/images/wechatpay.png" alt="wx 微信支付">
         <p>微信支付</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/tommy88/images/alipay.png" alt="wx 支付宝">
+        <img src="/images/alipay.png" alt="wx 支付宝">
         <p>支付宝</p>
       </div>
 
@@ -445,7 +445,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f.html" title="波士顿矩阵">http://fat_fat_where_are_you.gitee.io/tommy88/archives/dd96e05f.html</a>
+    <a href="http://fat_fat_where_are_you.gitee.io/archives/dd96e05f.html" title="波士顿矩阵">http://fat_fat_where_are_you.gitee.io/archives/dd96e05f.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -456,8 +456,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tommy88/tags/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i> 思维模式</a>
-              <a href="/tommy88/tags/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D/" rel="tag"><i class="fas fa-tags"></i> 产品定位</a>
+              <a href="/tags/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i> 思维模式</a>
+              <a href="/tags/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D/" rel="tag"><i class="fas fa-tags"></i> 产品定位</a>
           </div>
 
         
@@ -471,11 +471,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/tommy88/archives/48ff0a44.html" rel="prev" title="六级英语保命">
+    <a href="/archives/48ff0a44.html" rel="prev" title="六级英语保命">
       <i class="fa fa-chevron-left"></i> 六级英语保命
     </a></div>
       <div class="post-nav-item">
-    <a href="/tommy88/archives/394b329c.html" rel="next" title="Kano 模型">
+    <a href="/archives/394b329c.html" rel="next" title="Kano 模型">
       Kano 模型 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -543,27 +543,27 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="wx" src="/tommy88/images/touxiang.gif">
+    <img class="site-author-image" itemprop="image" alt="wx" src="/images/touxiang.gif">
   <p class="site-author-name" itemprop="name">wx</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/tommy88/archives/">
+          <a href="/archives/">
         
           <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/tommy88/categories/">
+            <a href="/categories/">
           
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tommy88/tags/">
+            <a href="/tags/">
           
         <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
@@ -681,26 +681,26 @@ translateInitilization();
   </div>
 
   
-  <script src="/tommy88/lib/anime.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/tommy88/lib/velocity/velocity.min.js"></script>
-  <script src="/tommy88/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/tommy88/js/utils.js"></script>
+<script src="/js/utils.js"></script>
 
-<script src="/tommy88/js/motion.js"></script>
-
-
-<script src="/tommy88/js/schemes/pisces.js"></script>
+<script src="/js/motion.js"></script>
 
 
-<script src="/tommy88/js/next-boot.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
-  <script defer src="/tommy88/lib/three/three.min.js"></script>
-    <script defer src="/tommy88/lib/three/canvas_lines.min.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
 
 
   
@@ -729,7 +729,7 @@ translateInitilization();
   </script>
 
   
-<script src="/tommy88/js/local-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -795,7 +795,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       <div class="moon-menu-text"></div>
     </div>
   </div>
-</div><script src="/tommy88/js/injector.js"></script>
+</div><script src="/js/injector.js"></script>
 <!-- 数字雨 -->
 <!-- <canvas id="canvas" width="1440" height="900" ></canvas> -->
 <!-- <script type="text/javascript" src="/js/src/DigitalRain.js"></script> -->
