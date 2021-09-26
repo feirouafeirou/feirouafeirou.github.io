@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/astronaut32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/astronaut16.png">
@@ -32,7 +32,7 @@
 <meta property="og:description" content="HTML与CSS学习5 这篇笔记主要讲了CSS盒子模型(border，padding，margin)，圆角边框，盒子阴影，文字阴影这篇笔记是初学者写下的笔记，如有错误，欢迎前来指正">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-18T07:52:45.000Z">
-<meta property="article:modified_time" content="2020-08-01T08:54:03.548Z">
+<meta property="article:modified_time" content="2020-07-18T07:52:45.000Z">
 <meta property="article:author" content="肥肉啊肥肉你在哪">
 <meta property="article:tag" content="HTML与CSS">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
     lang   : 'zh-CN'
   };
 </script>
-
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css"><link rel="preload" as="style" href="/css/injector/light.css"><link rel="preload" as="style" href="/css/injector/dark.css">
   <title>HTML 与 CSS 学习 5 | 肥肉啊肥肉你在哪</title>
   
 
@@ -226,13 +226,6 @@
 
               <time title="创建时间：2020-07-18 15:52:45" itemprop="dateCreated datePublished" datetime="2020-07-18T15:52:45+08:00">2020-07-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 16:54:03" itemprop="dateModified" datetime="2020-08-01T16:54:03+08:00">2020-08-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -294,19 +287,18 @@
         <h1 id="HTML 与 CSS 学习 5"><a href="#HTML 与 CSS 学习 5" class="headerlink" title="HTML 与 CSS 学习 5"></a>HTML 与 CSS 学习 5</h1><blockquote>
 <p>这篇笔记主要讲了 CSS 盒子模型 (border，padding，margin)，圆角边框，盒子阴影，文字阴影<br> 这篇笔记是初学者写下的笔记，如有错误，欢迎前来指正</p>
 </blockquote>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="CSS 盒子模型"><a href="#CSS 盒子模型" class="headerlink" title="CSS 盒子模型"></a>CSS 盒子模型</h2><ul>
-<li>border 边框</li>
-<li>content 内容</li>
-<li>padding 内边距：边框和内容的距离</li>
-<li>margin 外边距：盒子与盒子之间的距离</li>
-<li>在审查元素里的 CSS 部分里的 Computed 里面可以看见这四个属性</li>
+<li>  border 边框</li>
+<li>  content 内容</li>
+<li>  padding 内边距：边框和内容的距离</li>
+<li>  margin 外边距：盒子与盒子之间的距离</li>
+<li>  在审查元素里的 CSS 部分里的 Computed 里面可以看见这四个属性</li>
 </ul>
 <h3 id="边框 -border"><a href="# 边框 -border" class="headerlink" title="边框 (border)"></a>边框 (border)</h3><ul>
 <li><p>边框复合语法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border: border-width | border-style | border-color;</span><br><span class="line"><span class="comment">/* 没有先后顺序，上面是推荐顺序 */</span></span><br></pre></td></tr></table></figure>
-
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border</span>: border-width | border-style | border-color;</span><br><span class="line"><span class="comment">/* 没有先后顺序，上面是推荐顺序 */</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -342,27 +334,17 @@
 <li><p>两个单元格都有边框，导致边框变粗</p>
 </li>
 <li><p>解决方法：合并相邻单元格边框</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-collapse</span>: <span class="selector-tag">collapse</span>;</span><br><span class="line"><span class="comment">/* 表示相邻的边框合并在一起 */</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-collapse</span>: collapse;</span><br><span class="line"><span class="comment">/* 表示相邻的边框合并在一起 */</span></span><br></pre></td></tr></table></figure></li>
 <li><p>注意：边框会影响盒子实际大小</p>
 </li>
-<li><p>实际大小 = 内容宽度 + border 宽度 *2</p>
+<li><p>  实际大小 = 内容宽度 + border 宽度 *2</p>
 </li>
 </ul>
 <h3 id="内边距 -padding"><a href="# 内边距 -padding" class="headerlink" title="内边距 (padding)"></a>内边距 (padding)</h3><ul>
 <li><p>内容跟边框的距离</p>
 </li>
 <li><p>可以通过方位名词来分别设置到四边的距离</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">padding-left</span>: 20<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">padding-top</span>: 20<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">padding-top</span>: <span class="number">20px</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="padding 复合属性"><a href="#padding 复合属性" class="headerlink" title="padding 复合属性"></a>padding 复合属性</h4><table>
@@ -390,80 +372,58 @@
 </tr>
 </tbody></table>
 <ul>
-<li><p>padding 也会影响盒子实际大小</p>
-</li>
-<li><p>注意：子类盒子在没有指定宽度的情况下不会撑大父类盒子</p>
-</li>
+<li>padding 也会影响盒子实际大小</li>
+<li>注意：子类盒子在没有指定宽度的情况下不会撑大父类盒子</li>
 </ul>
 <h3 id="外边距 -magin"><a href="# 外边距 -magin" class="headerlink" title="外边距 (magin)"></a>外边距 (magin)</h3><ul>
-<li><p>盒子和盒子之间的距离</p>
-</li>
-<li><p>同样可以用方位名词来分别声明上下左右的外边距</p>
-</li>
-<li><p><strong>margin 外边距复合属性写法和 padding 一致</strong></p>
-</li>
+<li>盒子和盒子之间的距离</li>
+<li>同样可以用方位名词来分别声明上下左右的外边距</li>
+<li><strong>margin 外边距复合属性写法和 padding 一致</strong></li>
 </ul>
 <h4 id="margin 应用：块元素水平居中"><a href="#margin 应用：块元素水平居中" class="headerlink" title="margin 应用：块元素水平居中"></a>margin 应用：块元素水平居中</h4><ul>
-<li><p>满足条件：</p>
-<ol>
-<li>盒子必须指定了宽度</li>
-<li>盒子左右外边距都设置为 auto <code>margin: 0 auto;</code></li>
+<li>满足条件：<ol>
+<li> 盒子必须指定了宽度</li>
+<li> 盒子左右外边距都设置为 auto <code>margin: 0 auto;</code></li>
 </ol>
 </li>
-<li><p>注意：无法给行内块元素和行内元素居中对齐</p>
-<ul>
-<li>解决方法，给父元素加属性<code>text-align: center;</code></li>
+<li>注意：无法给行内块元素和行内元素居中对齐<ul>
+<li>  解决方法，给父元素加属性<code>text-align: center;</code></li>
 </ul>
 </li>
 </ul>
 <h4 id="嵌套块元素塌陷"><a href="# 嵌套块元素塌陷" class="headerlink" title="嵌套块元素塌陷"></a>嵌套块元素塌陷</h4><ul>
-<li><p>两个嵌套关系 (父子关系) 的块元素，父元素有上外边距，子元素也有上外边距，此时父元素会向下较大的外边距值</p>
-</li>
-<li><p>解决方案：</p>
-<ul>
-<li>给父元素一个上边框 (边框颜色透明参数 transparent)</li>
-<li>给父元素定义上内边距</li>
-<li>给父元素添加 <code>overflow: hidden</code> <strong> 常用</strong></li>
+<li>两个嵌套关系 (父子关系) 的块元素，父元素有上外边距，子元素也有上外边距，此时父元素会向下较大的外边距值</li>
+<li>解决方案：<ul>
+<li>  给父元素一个上边框 (边框颜色透明参数 transparent)</li>
+<li>  给父元素定义上内边距</li>
+<li>  给父元素添加 <code>overflow: hidden</code> <strong> 常用</strong></li>
 </ul>
 </li>
-<li><p>注意：浮动的盒子不会有外边距塌陷的问题</p>
-</li>
+<li>注意：浮动的盒子不会有外边距塌陷的问题</li>
 </ul>
 <h3 id="清除内外边距"><a href="# 清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h3><ul>
 <li><p>网页内容默认携带内外边距</p>
 </li>
 <li><p>代码样例：</p>
+   <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  *&#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line"><span class="comment">/* 所有的标签都选出来，清楚所有的内外边距 */</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>  注意：行内元素为了照顾兼容性，尽量只设置左右内外边距，不设置上下内外边距。转换为块元素和行内块元素就可以随意设置</p>
 </li>
-</ul>
-<pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  *&#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line"><span class="comment">/* 所有的标签都选出来，清楚所有的内外边距 */</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></code></pre><ul>
-<li>注意：行内元素为了照顾兼容性，尽量只设置左右内外边距，不设置上下内外边距。转换为块元素和行内块元素就可以随意设置</li>
 </ul>
 <h2 id="PS 的基本操作"><a href="#PS 的基本操作" class="headerlink" title="PS 的基本操作"></a>PS 的基本操作</h2><ul>
-<li>Ctrl+R 快速调出标尺 (单位像素)</li>
-<li>按住空格，抓手工具</li>
-<li>Ctrl+D 取消选区</li>
+<li>  Ctrl+R 快速调出标尺 (单位像素)</li>
+<li>  按住空格，抓手工具</li>
+<li>  Ctrl+D 取消选区</li>
 </ul>
 <h3 id="示例总结"><a href="# 示例总结" class="headerlink" title="示例总结"></a>示例总结</h3><ul>
-<li><p>遇到不知道什么时候用什么的标签</p>
-</li>
-<li><p>遇到产品标题用 h 大量段落用 p</p>
-</li>
-<li><p>盒子和盒子之间用 margin</p>
-</li>
-<li><p>盒子和内容之间用 padding</p>
-</li>
-<li><p>去掉 li 里的圆点<code>list-style: none;</code></p>
-</li>
+<li>遇到不知道什么时候用什么的标签</li>
+<li>遇到产品标题用 h 大量段落用 p</li>
+<li>盒子和盒子之间用 margin</li>
+<li>盒子和内容之间用 padding</li>
+<li>去掉 li 里的圆点<code>list-style: none;</code></li>
 </ul>
 <h2 id="圆角边框"><a href="# 圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h2><ul>
 <li><p>语法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: <span class="selector-tag">length</span>;</span><br><span class="line"><span class="comment">/* length 是圆的半径，和矩形的两个边相切 */</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-radius</span>: length;</span><br><span class="line"><span class="comment">/* length 是圆的半径，和矩形的两个边相切 */</span></span><br></pre></td></tr></table></figure></li>
 <li><p>常用写法：</p>
 </li>
 <li><p>圆形：</p>
@@ -478,22 +438,21 @@
 </li>
 <li><p>复合属性</p>
 <ul>
-<li>一个参数时四个角都设置相同弧度</li>
-<li>两个参数左上和右下是第一个参数，右上和左下是另一个参数</li>
+<li>  一个参数时四个角都设置相同弧度</li>
+<li>  两个参数左上和右下是第一个参数，右上和左下是另一个参数</li>
 <li>有四个参数时按顺时针顺序设置弧度</li>
 </ul>
 </li>
 <li><p>分别设置：</p>
 <ul>
-<li><code>border-top-left-radius</code>左上角</li>
-<li>先上下，后左右</li>
+<li>  <code>border-top-left-radius</code>左上角</li>
+<li>  先上下，后左右</li>
 </ul>
 </li>
 </ul>
 <h2 id="盒子阴影"><a href="# 盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2><ul>
 <li><p>代码样例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: h-shadow | v-shadow | blur | spread | color | inset;</span><br></pre></td></tr></table></figure>
-
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: h-shadow | v-shadow | blur | spread | color | inset;</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -533,17 +492,16 @@
 </li>
 <li><p>任何盒子都可以添加:hover 属性</p>
 </li>
-<li><p>常用阴影：</p>
+<li><p>  常用阴影：</p>
 </li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: 0 2<span class="selector-tag">px</span> 4<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0, 0, 0, <span class="selector-class">.2</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">4px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 
 
 <p>​<br>​    </p>
 <h2 id="文字阴影"><a href="# 文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h2><ul>
 <li><p>代码样例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-shadow: h-shadow | v-shadow | blur | color;</span><br></pre></td></tr></table></figure>
-
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">text-shadow</span>: h-shadow | v-shadow | blur | color;</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -567,11 +525,23 @@
 <td align="center">color</td>
 <td align="center">阴影颜色(rgba)</td>
 </tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
 </tbody></table>
 </li>
 </ul>
 <blockquote>
-<p>本文转载自<a href="https://blog.csdn.net/weixin_46170034/article/details/104283778" target="_blank" rel="external nofollow noopener noreferrer">https://blog.csdn.net/weixin_46170034/article/details/104283778</a></p>
+<p>本文转载自<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/weixin_46170034/article/details/104283778">https://blog.csdn.net/weixin_46170034/article/details/104283778</a></p>
 </blockquote>
 
     </div>
@@ -583,19 +553,19 @@
   <div class="popular-posts-header">相关文章推荐</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\archives\c10fa92e.html" rel="bookmark">读《Head First HTML 与 CSS》3</a></div>
+      <div class="popular-posts-title"><a href="\archives\88f0ef65.html" rel="bookmark">HTML 与 CSS 学习 1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\archives\11f9bedf.html" rel="bookmark">HTML 与 CSS 学习 2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\archives\66fe8e49.html" rel="bookmark">HTML 与 CSS 学习 3</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\archives\f89a1bea.html" rel="bookmark">HTML 与 CSS 学习 4</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\archives\862b6757.html" rel="bookmark">HTML 与 CSS 学习 9</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\archives\f12c57c1.html" rel="bookmark">HTML 与 CSS 学习 8</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\archives\61934a50.html" rel="bookmark">HTML 与 CSS 学习 7</a></div>
+      <div class="popular-posts-title"><a href="\archives\16947ac6.html" rel="bookmark">HTML 与 CSS 学习 6</a></div>
     </li>
   </ul>
 
@@ -719,7 +689,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML 与 CSS 学习 5"><span class="nav-text">HTML 与 CSS 学习 5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS 盒子模型"><span class="nav-text">CSS 盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#边框 -border"><span class="nav-text">边框 (border)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#表格细线边框"><span class="nav-text">表格细线边框</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内边距 -padding"><span class="nav-text">内边距 (padding)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#padding 复合属性"><span class="nav-text">padding 复合属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外边距 -magin"><span class="nav-text">外边距 (magin)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#margin 应用：块元素水平居中"><span class="nav-text">margin 应用：块元素水平居中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套块元素塌陷"><span class="nav-text">嵌套块元素塌陷</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除内外边距"><span class="nav-text">清除内外边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS 的基本操作"><span class="nav-text">PS 的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例总结"><span class="nav-text">示例总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆角边框"><span class="nav-text">圆角边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子阴影"><span class="nav-text">盒子阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字阴影"><span class="nav-text">文字阴影</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML%20%E4%B8%8E%20CSS%20%E5%AD%A6%E4%B9%A0%205"><span class="nav-text">HTML 与 CSS 学习 5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%20%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="nav-text">CSS 盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E6%A1%86%20-border"><span class="nav-text">边框 (border)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E7%BB%86%E7%BA%BF%E8%BE%B9%E6%A1%86"><span class="nav-text">表格细线边框</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%BE%B9%E8%B7%9D%20-padding"><span class="nav-text">内边距 (padding)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#padding%20%E5%A4%8D%E5%90%88%E5%B1%9E%E6%80%A7"><span class="nav-text">padding 复合属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%20-magin"><span class="nav-text">外边距 (magin)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#margin%20%E5%BA%94%E7%94%A8%EF%BC%9A%E5%9D%97%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="nav-text">margin 应用：块元素水平居中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%9D%97%E5%85%83%E7%B4%A0%E5%A1%8C%E9%99%B7"><span class="nav-text">嵌套块元素塌陷</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E5%86%85%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="nav-text">清除内外边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-text">PS 的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B%E6%80%BB%E7%BB%93"><span class="nav-text">示例总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86"><span class="nav-text">圆角边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1"><span class="nav-text">盒子阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1"><span class="nav-text">文字阴影</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -734,7 +704,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -747,7 +717,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -805,12 +775,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">187k</span>
+    <span title="站点总字数">193k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:50</span>
+    <span title="站点阅读时长">2:56</span>
 </div>
 
 <div class="translate-style">
@@ -959,10 +929,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 <div class="moon-menu">
   <div class="moon-menu-items">
     
-    <div class="moon-menu-item" onclick="back2bottom()">
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item" onclick="back2bottom()">
       <i class="fa fa-chevron-down"></i>    </div>
     
-    <div class="moon-menu-item" onclick="back2top()">
+    <div id="moon-menu-item-back2top" class="moon-menu-item" onclick="back2top()">
       <i class="fa fa-chevron-up"></i>    </div>
     
   </div>

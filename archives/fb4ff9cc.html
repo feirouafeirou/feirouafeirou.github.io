@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/astronaut32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/astronaut16.png">
@@ -26,61 +26,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
   <meta name="description" content="C语言（谭浩强版）读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C 语言谭浩强读书笔记">
+<meta property="og:title" content="C 语言学习笔记 ( 上）">
 <meta property="og:url" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc.html">
 <meta property="og:site_name" content="肥肉啊肥肉你在哪">
 <meta property="og:description" content="C语言（谭浩强版）读书笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220231150.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220318654.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220406796.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220438384.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220516844.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220512281.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220712999.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220743997.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220909305.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220850849.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220937753.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221338665.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221344308.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221650180.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221705491.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221731885.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221823915.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221832971.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221836438.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221859710.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221924168.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221946247.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222012923.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222035194.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2018122522205365.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222109966.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222139235.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2018122522215722.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222211787.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222231834.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222326333.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222355135.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222422738.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222455336.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222509485.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222534177.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/201812252225488.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222603632.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222625881.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222648805.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222710605.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222740817.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222754462.png">
-<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222907459.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220231150.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220318654-1632636665832.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220406796-1632636669783.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220438384-1632636673093.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220516844.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220512281.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220712999-1632636680082.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220743997-1632636682288.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220909305-1632636685002.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220850849-1632636687028.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220937753-1632636690821.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221338665-1632636695884.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221344308-1632636697706.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221650180-1632636699683.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221705491-1632636701501.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221731885-1632636703505.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221823915-1632636706296.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221832971-1632636708866.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221836438-1632636710704.png">
+<meta property="og:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225221859710-1632636712388.png">
 <meta property="article:published_time" content="2021-08-17T07:05:43.000Z">
-<meta property="article:modified_time" content="2021-08-17T07:42:36.450Z">
+<meta property="article:modified_time" content="2021-08-17T07:05:43.000Z">
 <meta property="article:author" content="肥肉啊肥肉你在哪">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://fat_fat_where_are_you.gitee.io/archives/C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220231150.png">
+<meta name="twitter:image" content="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc/20181225220231150.png">
 
 <link rel="canonical" href="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc.html">
 
@@ -94,8 +70,8 @@
     lang   : 'zh-CN'
   };
 </script>
-
-  <title>C 语言谭浩强读书笔记 | 肥肉啊肥肉你在哪</title>
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css"><link rel="preload" as="style" href="/css/injector/light.css"><link rel="preload" as="style" href="/css/injector/dark.css">
+  <title>C 语言学习笔记 ( 上） | 肥肉啊肥肉你在哪</title>
   
 
 
@@ -259,7 +235,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C 语言谭浩强读书笔记
+          C 语言学习笔记 ( 上）
         </h1>
 
         <div class="post-meta">
@@ -268,9 +244,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-17 15:05:43 / 修改时间：15:42:36" itemprop="dateCreated datePublished" datetime="2021-08-17T15:05:43+08:00">2021-08-17</time>
+              <time title="创建时间：2021-08-17 15:05:43" itemprop="dateCreated datePublished" datetime="2021-08-17T15:05:43+08:00">2021-08-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,7 +260,7 @@
           
           
           <br>
-            <span id="/archives/fb4ff9cc.html" class="post-meta-item leancloud_visitors" data-flag-title="C 语言谭浩强读书笔记" title="阅读次数">
+            <span id="/archives/fb4ff9cc.html" class="post-meta-item leancloud_visitors" data-flag-title="C 语言学习笔记 ( 上）" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -311,14 +286,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -330,33 +305,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="C 语言（谭浩强版）读书笔记"><a href="#C 语言（谭浩强版）读书笔记" class="headerlink" title="C 语言（谭浩强版）读书笔记"></a>C 语言（谭浩强版）读书笔记</h1><a id="more"></a>
+        <h1 id="C 语言（谭浩强版）读书笔记"><a href="#C 语言（谭浩强版）读书笔记" class="headerlink" title="C 语言（谭浩强版）读书笔记"></a>C 语言（谭浩强版）读书笔记</h1><span id="more"></span>
 
-<h2 id="1- 加油"><a href="#1- 加油" class="headerlink" title="1. 加油"></a>1. 加油</h2><h2 id="2- 程序组成"><a href="#2- 程序组成" class="headerlink" title="2. 程序组成"></a>2. 程序组成</h2><p>|<img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220231150.png" alt="在这里插入图片描述"></p>
-<h2 id="3- 数据类型"><a href="#3- 数据类型" class="headerlink" title="3. 数据类型"></a>3. 数据类型</h2><h3 id="3-1 数据类型"><a href="#3-1 数据类型" class="headerlink" title="3.1 数据类型"></a>3.1 数据类型</h3><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220318654.png" alt="在这里插入图片描述"></p>
+<h2 id="1- 加油"><a href="#1- 加油" class="headerlink" title="1. 加油"></a>1. 加油</h2><h2 id="2- 程序组成"><a href="#2- 程序组成" class="headerlink" title="2. 程序组成"></a>2. 程序组成</h2><p><img data-src="/archives/fb4ff9cc/20181225220231150.png"></p>
+<h2 id="3- 数据类型"><a href="#3- 数据类型" class="headerlink" title="3. 数据类型"></a>3. 数据类型</h2><h3 id="3-1 数据类型"><a href="#3-1 数据类型" class="headerlink" title="3.1 数据类型"></a>3.1 数据类型</h3><p><img data-src="/archives/fb4ff9cc/20181225220318654-1632636665832.png"></p>
 <blockquote>
 <p>实数常量指数形式，规定以字母 e 或 E 代表以 10 为底的指数。但应注意：e 或 E 之前必须有数字，且 e 或 E 后面必须为 <code> 整数</code>。如不能写成 e4，12e2.5。</p>
 </blockquote>
-<h3 id="3-2 常量类型"><a href="#3-2 常量类型" class="headerlink" title="3.2 常量类型"></a>3.2 常量类型</h3><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220406796.png" alt="在这里插入图片描述"></p>
+<h3 id="3-2 常量类型"><a href="#3-2 常量类型" class="headerlink" title="3.2 常量类型"></a>3.2 常量类型</h3><p><img data-src="/archives/fb4ff9cc/20181225220406796-1632636669783.png"></p>
 <blockquote>
 <p>注意：C 程序中的实型常量都是双精度浮点型常量。<br>如果有：<br>float a=3.14159；<br>    在进行编译时，对 float 变量分配 4 个字节，但对于浮点型常量 3.14159，则按双精度处理，分配 8 个字节。编译系统会发出“警告”(warning:truncation from’const double’tofloat’)。意为“把一个双精度常量转换为 float 型”，提醒用户注意这种转换可能损失精度。<br> 可以在常量的末尾加专用字符，强制指定常量的类型。如在 3.14159 后面加字母 F 或 f，就表示是 float 型常量，分配 4 个字节。如果在实型常量后面加大写或小写的 L，指定此常量为 long double 类型。如：<br> float a=3.14159f；// 把此 3.14159 按单精度浮点常量处理，编译时不出现“警告”。<br> long doublea==1.231// 把此 1.23 作为 long double 处理</p>
 </blockquote>
-<h3 id="3-3 转义字符"><a href="#3-3 转义字符" class="headerlink" title="3.3 转义字符"></a>3.3 转义字符</h3><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220438384.png" alt="在这里插入图片描述"></p>
+<h3 id="3-3 转义字符"><a href="#3-3 转义字符" class="headerlink" title="3.3 转义字符"></a>3.3 转义字符</h3><p><img data-src="/archives/fb4ff9cc/20181225220438384-1632636673093.png"></p>
 <h3 id="3-4 格式字符 - 修饰符"><a href="#3-4 格式字符 - 修饰符" class="headerlink" title="3.4 格式字符 / 修饰符"></a>3.4 格式字符 / 修饰符</h3><blockquote>
 <p>见 6.3（1）。</p>
 </blockquote>
 <h2 id="4- 运算"><a href="#4- 运算" class="headerlink" title="4. 运算"></a>4. 运算</h2><h3 id="4-1 优先级"><a href="#4-1 优先级" class="headerlink" title="4.1 优先级"></a>4.1 优先级</h3><p>（1）i++ 与 ++i 不同；<br>（2）附录 D；</p>
-<h3 id="4-2 不同类型混合运算"><a href="#4-2 不同类型混合运算" class="headerlink" title="4.2 不同类型混合运算"></a>4.2 不同类型混合运算</h3><p>float/double&gt;int&gt;char<br>（1）双目运算有一个为 float/double，则结果为 double，必有小数点；<br>（2）char 数据与 int 整型运算，结果为整型；<br>（3）a=5;     a/2：a 为整型则结果为 2；a 为 double 则结果为 2.5；<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220516844.png" alt="在这里插入图片描述">)<img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220512281.png" alt="在这里插入图片描述"></p>
+<h3 id="4-2 不同类型混合运算"><a href="#4-2 不同类型混合运算" class="headerlink" title="4.2 不同类型混合运算"></a>4.2 不同类型混合运算</h3><p>float/double&gt;int&gt;char<br>（1）双目运算有一个为 float/double，则结果为 double，必有小数点；<br>（2）char 数据与 int 整型运算，结果为整型；<br>（3）a=5;     a/2：a 为整型则结果为 2；a 为 double 则结果为 2.5；<br><img data-src="/archives/fb4ff9cc/20181225220516844.png"></p>
+<p><img data-src="/archives/fb4ff9cc/20181225220512281.png"></p>
 <h3 id="4-3 强制转换类型"><a href="#4-3 强制转换类型" class="headerlink" title="4.3 强制转换类型"></a>4.3 强制转换类型</h3><p>（类型名）（表达式）</p>
 <blockquote>
 <p>% 要求两侧均为整型，floatx;  x%3;    // 不合法，改为 int(x)%3</p>
 </blockquote>
-<h2 id="5- 头文件"><a href="#5- 头文件" class="headerlink" title="5. 头文件"></a>5. 头文件</h2><h3 id="5-1stdio-h"><a href="#5-1stdio-h" class="headerlink" title="5.1stdio.h"></a>5.1stdio.h</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">standardinput\&amp;output.header 标准输入和输出. 头文件</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>\<span class="meta-string">&lt;stdio.h&gt;// 标准方式</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>”stadio.h”<span class="comment">// 先当前目录再标准方式</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="5- 头文件"><a href="#5- 头文件" class="headerlink" title="5. 头文件"></a>5. 头文件</h2><h3 id="5-1stdio-h"><a href="#5-1stdio-h" class="headerlink" title="5.1stdio.h"></a>5.1stdio.h</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">standardinput\&amp;output.header 标准输入和输出. 头文件</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>\<span class="meta-string">&lt;stdio.h&gt;</span><span class="comment">// 标准方式</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>”stadio.h”<span class="comment">// 先当前目录再标准方式</span></span></span><br></pre></td></tr></table></figure>
 
-<h3 id="5-2math-h"><a href="#5-2math-h" class="headerlink" title="5.2math.h"></a>5.2math.h</h3><h3 id="5-3stdlib-h"><a href="#5-3stdlib-h" class="headerlink" title="5.3stdlib.h"></a>5.3stdlib.h</h3><h3 id="5-4string-h"><a href="#5-4string-h" class="headerlink" title="5.4string.h"></a>5.4string.h</h3><h2 id="6-C 语句"><a href="#6-C 语句" class="headerlink" title="6.C 语句"></a>6.C 语句</h2><h3 id="6-1 表达式 - 语句"><a href="#6-1 表达式 - 语句" class="headerlink" title="6.1 表达式 / 语句"></a>6.1 表达式 / 语句</h3><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220712999.png" alt="在这里插入图片描述"></p>
-<h3 id="6-2 赋值语句"><a href="#6-2 赋值语句" class="headerlink" title="6.2 赋值语句"></a>6.2 赋值语句</h3><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220743997.png" alt="在这里插入图片描述"></p>
-<h3 id="6-3 输入输出"><a href="#6-3 输入输出" class="headerlink" title="6.3 输入输出"></a>6.3 输入输出</h3><h4 id="（1）数据输出"><a href="#（1）数据输出" class="headerlink" title="（1）数据输出"></a>（1）数据输出</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220909305.png" alt="在这里插入图片描述"><br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220850849.png" alt="在这里插入图片描述"></p>
-<h4 id="（2）数据输入"><a href="#（2）数据输入" class="headerlink" title="（2）数据输入"></a>（2）数据输入</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225220937753.png" alt="在这里插入图片描述"></p>
+<h3 id="5-2math-h"><a href="#5-2math-h" class="headerlink" title="5.2math.h"></a>5.2math.h</h3><h3 id="5-3stdlib-h"><a href="#5-3stdlib-h" class="headerlink" title="5.3stdlib.h"></a>5.3stdlib.h</h3><h3 id="5-4string-h"><a href="#5-4string-h" class="headerlink" title="5.4string.h"></a>5.4string.h</h3><h2 id="6-C 语句"><a href="#6-C 语句" class="headerlink" title="6.C 语句"></a>6.C 语句</h2><h3 id="6-1 表达式 - 语句"><a href="#6-1 表达式 - 语句" class="headerlink" title="6.1 表达式 / 语句"></a>6.1 表达式 / 语句</h3><p><img data-src="/archives/fb4ff9cc/20181225220712999-1632636680082.png"></p>
+<h3 id="6-2 赋值语句"><a href="#6-2 赋值语句" class="headerlink" title="6.2 赋值语句"></a>6.2 赋值语句</h3><p><img data-src="/archives/fb4ff9cc/20181225220743997-1632636682288.png"></p>
+<h3 id="6-3 输入输出"><a href="#6-3 输入输出" class="headerlink" title="6.3 输入输出"></a>6.3 输入输出</h3><h4 id="（1）数据输出"><a href="#（1）数据输出" class="headerlink" title="（1）数据输出"></a>（1）数据输出</h4><p><img data-src="/archives/fb4ff9cc/20181225220909305-1632636685002.png"><br><img data-src="/archives/fb4ff9cc/20181225220850849-1632636687028.png"></p>
+<h4 id="（2）数据输入"><a href="#（2）数据输入" class="headerlink" title="（2）数据输入"></a>（2）数据输入</h4><p><img data-src="/archives/fb4ff9cc/20181225220937753-1632636690821.png"></p>
 <h4 id="（3）字符输出"><a href="#（3）字符输出" class="headerlink" title="（3）字符输出"></a>（3）字符输出</h4><table>
 <thead>
 <tr>
@@ -383,72 +359,20 @@
 <td>①getcharacter    ②全部输完后按 Enter 结束    ③putchar(getchar());  ④printf(“c%”,getchar());</td>
 </tr>
 </tbody></table>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">char</span> a,b;</span><br><span class="line">a=getchar(); <span class="comment">// 输入转换为字符常量</span></span><br><span class="line">b=a<span class="number">-32</span>; <span class="comment">// 小写字母转大写字母</span></span><br><span class="line"><span class="built_in">putchar</span>(b); <span class="comment">// 常规输出 1</span></span><br><span class="line"><span class="built_in">putchar</span>(’\n’); <span class="comment">// 换行</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c"</span>,b); <span class="comment">// 常规输出 2</span></span><br><span class="line"><span class="built_in">putchar</span>(’\n’); <span class="comment">// 换行</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">char</span> a,b;</span><br><span class="line">a=getchar(); <span class="comment">// 输入转换为字符常量</span></span><br><span class="line">b=a<span class="number">-32</span>; <span class="comment">// 小写字母转大写字母</span></span><br><span class="line"><span class="built_in">putchar</span>(b); <span class="comment">// 常规输出 1</span></span><br><span class="line"><span class="built_in">putchar</span>(’\n’); <span class="comment">// 换行</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,b); <span class="comment">// 常规输出 2</span></span><br><span class="line"><span class="built_in">putchar</span>(’\n’); <span class="comment">// 换行</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<p>输入:a，输出:A、A<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221338665.png" alt="在这里插入图片描述"><br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221344308.png" alt="在这里插入图片描述"></p>
-<h3 id="6-4 选择结构"><a href="#6-4 选择结构" class="headerlink" title="6.4 选择结构"></a>6.4 选择结构 </h3><h4 id="（1）if-else"><a href="#（1）if-else" class="headerlink" title="（1）if/else"></a>（1）if/else</h4><p> 双分支<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221650180.png" alt="在这里插入图片描述"></p>
-<h4 id="（2）-："><a href="#（2）-：" class="headerlink" title="（2）?/："></a>（2）?/：</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221705491.png" alt="在这里插入图片描述"></p>
-<h4 id="（3）switch-case"><a href="#（3）switch-case" class="headerlink" title="（3）switch/case"></a>（3）switch/case</h4><p>多分支<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221731885.png" alt="在这里插入图片描述"></p>
+<p>输入:a，输出:A、A<br><img data-src="/archives/fb4ff9cc/20181225221338665-1632636695884.png"><br><img data-src="/archives/fb4ff9cc/20181225221344308-1632636697706.png"></p>
+<h3 id="6-4 选择结构"><a href="#6-4 选择结构" class="headerlink" title="6.4 选择结构"></a>6.4 选择结构 </h3><h4 id="（1）if-else"><a href="#（1）if-else" class="headerlink" title="（1）if/else"></a>（1）if/else</h4><p> 双分支<br><img data-src="/archives/fb4ff9cc/20181225221650180-1632636699683.png"></p>
+<h4 id="（2）-："><a href="#（2）-：" class="headerlink" title="（2）?/："></a>（2）?/：</h4><p><img data-src="/archives/fb4ff9cc/20181225221705491-1632636701501.png"></p>
+<h4 id="（3）switch-case"><a href="#（3）switch-case" class="headerlink" title="（3）switch/case"></a>（3）switch/case</h4><p>多分支<br><img data-src="/archives/fb4ff9cc/20181225221731885-1632636703505.png"></p>
 <blockquote>
 <p>①表达式与常量比较，若相同则一直执行下去，直到遇到 break 跳出此循环<br>②多 case 共用一组语句：<br>case‘A’:  </p>
 <p>case(B):printf(“&gt;60\n”);break;</p>
 </blockquote>
-<h3 id="6-5 循环结构"><a href="#6-5 循环结构" class="headerlink" title="6.5 循环结构"></a>6.5 循环结构</h3><h4 id="（1）while-do-while-for"><a href="#（1）while-do-while-for" class="headerlink" title="（1）while/do,while/for"></a>（1）while/do,while/for</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221823915.png" alt="在这里插入图片描述"><br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221832971.png" alt="在这里插入图片描述"><br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221836438.png" alt="在这里插入图片描述"></p>
-<h4 id="（2）break-continue"><a href="#（2）break-continue" class="headerlink" title="（2）break/continue"></a>（2）break/continue</h4><p>改变循环状态<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221859710.png" alt="在这里插入图片描述"></p>
-<h3 id="7- 数组"><a href="#7- 数组" class="headerlink" title="7. 数组"></a>7. 数组</h3><h4 id="7-1 一维数组"><a href="#7-1 一维数组" class="headerlink" title="7.1 一维数组"></a>7.1 一维数组</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221924168.png" alt="在这里插入图片描述"></p>
-<h4 id="7-2 二维数组（矩阵）"><a href="#7-2 二维数组（矩阵）" class="headerlink" title="7.2 二维数组（矩阵）"></a>7.2 二维数组（矩阵）</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225221946247.png" alt="在这里插入图片描述"></p>
-<h4 id="7-3 字符数组"><a href="#7-3 字符数组" class="headerlink" title="7.3 字符数组"></a>7.3 字符数组 </h4><p> 字符型数据以字符的 ASCII 码存储，属于整数形式，一般占用一个字节。<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222012923.png" alt="在这里插入图片描述"></p>
-<h4 id="7-4 字符串处理函数"><a href="#7-4 字符串处理函数" class="headerlink" title="7.4 字符串处理函数"></a>7.4 字符串处理函数 </h4><p> 待输入字符数组 / 连接数组 1/ 复制数组 1，必须有元素个数防止过小。<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222035194.png" alt="在这里插入图片描述"></p>
-<h3 id="8- 函数"><a href="#8- 函数" class="headerlink" title="8. 函数"></a>8. 函数</h3><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2018122522205365.png" alt="在这里插入图片描述"></p>
-<h4 id="8-1 定义 - 声明"><a href="#8-1 定义 - 声明" class="headerlink" title="8.1 定义 / 声明"></a>8.1 定义 / 声明</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222109966.png" alt="在这里插入图片描述"></p>
-<h4 id="8-2 调用"><a href="#8-2 调用" class="headerlink" title="8.2 调用"></a>8.2 调用</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222139235.png" alt="在这里插入图片描述"></p>
-<h4 id="8-3 数组参数"><a href="#8-3 数组参数" class="headerlink" title="8.3 数组参数"></a>8.3 数组参数</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2018122522215722.png" alt="在这里插入图片描述"></p>
-<h4 id="8-4 局部变量 - 全局变量"><a href="#8-4 局部变量 - 全局变量" class="headerlink" title="8.4 局部变量 / 全局变量"></a>8.4 局部变量 / 全局变量 </h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222211787.png" alt="在这里插入图片描述"><br> 为多个源文件共用外部变量，减少“外部变量声明”，可将所有“外部变量声明”集中在一个新建 new.h 文件中，然后调用 #include&lt;new.h&gt; 即可。</p>
-<h3 id="9- 指针"><a href="#9- 指针" class="headerlink" title="9. 指针"></a>9. 指针 </h3><h4 id="9-1 指针变量"><a href="#9-1 指针变量" class="headerlink" title="9.1 指针变量"></a>9.1 指针变量</h4><p> 指针：&amp;，地址，&amp;x 表示变量 x 的地址；<br>指针变量：存放变量 x 的地址（指针）的变量 a，即地址变量，值为地址；<br>指向：*，*p 表示指针变量 p 所指向的变量 x，即 x 的值；<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222231834.png" alt="在这里插入图片描述"></p>
-<h4 id="9-2 数组指针"><a href="#9-2 数组指针" class="headerlink" title="9.2 数组指针"></a>9.2 数组指针</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222326333.png" alt="在这里插入图片描述"></p>
-<h4 id="9-3 二维数组指针"><a href="#9-3 二维数组指针" class="headerlink" title="9.3 二维数组指针"></a>9.3 二维数组指针</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222355135.png" alt="在这里插入图片描述"><br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222422738.png" alt="在这里插入图片描述"></p>
-<h4 id="9-4 字符串指针"><a href="#9-4 字符串指针" class="headerlink" title="9.4 字符串指针"></a>9.4 字符串指针 </h4><p> 定义 + 指向首地址 + 引用（p1++，p1!=’\0’）<br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222455336.png" alt="在这里插入图片描述"><br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222509485.png" alt="在这里插入图片描述"></p>
-<h4 id="9-5 函数指针"><a href="#9-5 函数指针" class="headerlink" title="9.5 函数指针"></a>9.5 函数指针</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222534177.png" alt="在这里插入图片描述"><br><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/201812252225488.png" alt="在这里插入图片描述"></p>
-<h4 id="9-6 指针型函数"><a href="#9-6 指针型函数" class="headerlink" title="9.6 指针型函数"></a>9.6 指针型函数</h4><h4 id><a href="#" class="headerlink" title></a><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222603632.png" alt="在这里插入图片描述"></h4><h4 id="9-7 指针型数组 - 指针"><a href="#9-7 指针型数组 - 指针" class="headerlink" title="9.7 指针型数组 / 指针"></a>9.7 指针型数组 / 指针</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222625881.png" alt="在这里插入图片描述"></p>
-<h3 id="10- 自定义数据类型"><a href="#10- 自定义数据类型" class="headerlink" title="10. 自定义数据类型"></a>10. 自定义数据类型</h3><h4 id="10-1 结构体"><a href="#10-1 结构体" class="headerlink" title="10.1 结构体"></a>10.1 结构体</h4><h5 id="（1）结构体变量"><a href="#（1）结构体变量" class="headerlink" title="（1）结构体变量"></a>（1）结构体变量</h5><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222648805.png" alt="在这里插入图片描述"></p>
-<h5 id="（2）结构体数组"><a href="#（2）结构体数组" class="headerlink" title="（2）结构体数组"></a>（2）结构体数组</h5><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222710605.png" alt="在这里插入图片描述"></p>
-<h5 id="（3）结构体指针"><a href="#（3）结构体指针" class="headerlink" title="（3）结构体指针"></a>（3）结构体指针</h5><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222740817.png" alt="在这里插入图片描述"></p>
-<h4 id="10-2 链表"><a href="#10-2 链表" class="headerlink" title="10.2 链表"></a>10.2 链表</h4><h5 id="（1）含义"><a href="#（1）含义" class="headerlink" title="（1）含义"></a>（1）含义</h5><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222754462.png" alt></p>
-<blockquote>
-<p>链表：头指针（结点 1 指针）+ 结点 1（数据 + 结点 2 指针）+ 结点 2（数据 + 结点 3 指针）…+ 表尾（空指针 NULL）<br>头文件中存放一个地址，指向一个元素即结点，结点包含用户所需数据和下一结点地址（一般称为 next）。。。最后一结点不指向其他元素。</p>
-</blockquote>
-<h5 id="（2）具体分析"><a href="#（2）具体分析" class="headerlink" title="（2）具体分析"></a>（2）具体分析 </h5><p> 利用结构体变量建立动态链表：</p>
-<h4 id="10-3 共用体"><a href="#10-3 共用体" class="headerlink" title="10.3 共用体"></a>10.3 共用体</h4><p><img data-src="C%E8%AF%AD%E8%A8%80%E8%B0%AD%E6%B5%A9%E5%BC%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20181225222907459.png" alt="在这里插入图片描述"></p>
-<h4 id="10-4typedef 声明新类型"><a href="#10-4typedef 声明新类型" class="headerlink" title="10.4typedef 声明新类型"></a>10.4typedef 声明新类型 </h4><h5 id="（1）格式"><a href="#（1）格式" class="headerlink" title="（1）格式"></a>（1）格式</h5><p> 按定义变量的方式，把变量名换上新类型名，并且在最前面加上“typedef”，就声明了新类型名代表原来的类型！</p>
-<ol>
-<li><p>命名一个简单地类型名代替复杂的类型表达方法：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typedefstruct\&#123;intnum;charname\[<span class="number">20</span>\];floatscore;\&#125;Data;</span><br><span class="line">Databirthday;<span class="comment">// 定义结构体变量 birthday</span></span><br><span class="line">Data\*p;<span class="comment">// 定义结构体指针变量 p，指向此结构体类型数据</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="2">
-<li><p>数组：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typedefintNum\[<span class="number">10</span>\];<span class="comment">// 声明 Num 为整型数组类型名</span></span><br><span class="line">Numa;<span class="comment">// 定义 a 为整形数组名，它有 100 个元素</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="3">
-<li><p>指针类型：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typedefchar\*<span class="keyword">String</span>;<span class="comment">// 声明 String 为字符指针类型</span></span><br><span class="line">Stringp,s\[<span class="number">10</span>\];/ 定义 p 为字符指针变量，s 为字符指针数组</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h5 id="（2）define-typedef"><a href="#（2）define-typedef" class="headerlink" title="（2）define/typedef"></a>（2）define/typedef</h5><p>#defineCountint// 只是简单地字符串替换<br>typedefintCount;// 有；</p>
-<h5 id="（3）新头文件"><a href="#（3）新头文件" class="headerlink" title="（3）新头文件"></a>（3）新头文件 </h5><p> 当不同源文件中用到同一类型数据（尤其是想数组、指针、结构体、共用体等）时，常用 typedef 声明一些数据类型，可以把所有的 typedef 名称声明单独放在一个头文件.h 中，然后再需要用到的文件中用 #include 指令把它们包含到文件中。</p>
-<p>extern: 为多个源文件共用外部变量，减少“外部变量声明”，可将所有“外部变量声明”集中在一个新建 new.h 文件中，然后调用 #include&lt;new.h&gt; 即可。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> “stdio.h”</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Len sizeof(struct Student) <span class="comment">// 结构体长度即所占空间大小</span></span></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> // 结构体–链表定义</span></span><br><span class="line"><span class="class">&#123;</span> <span class="keyword">long</span> num; <span class="comment">// 定义结构体的数据包含学生学号、成绩</span></span><br><span class="line"><span class="keyword">float</span> score;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> * <span class="title">next</span>;</span> &#125;； <span class="comment">//next 是指针变量，指向下一结构体变量即结点</span></span><br><span class="line"></span><br><span class="line"><span class="function">struct Student * <span class="title">creat</span><span class="params">(<span class="keyword">void</span>)</span> <span class="comment">// 定义函数，返回一指向链表头的指针</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="class"><span class="keyword">struct</span> <span class="title">Student</span> * <span class="title">head</span>;</span> <span class="comment">// 头指针</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> * <span class="title">p1</span>,*<span class="title">p2</span>;</span> <span class="comment">// 结点 1.2 的地址指针</span></span><br><span class="line">n=<span class="number">0</span>;</span><br><span class="line">p1=p2=(struct Student *) <span class="built_in">malloc</span>(Len); <span class="comment">// 开辟新单元并将地址赋值 p1/p2，(struct Student *) 是将 malloc 返回的指针转换成 struct Student 类型指针，也可省略不写，因为编译系统能实现隐式类型转换</span></span><br><span class="line"><span class="built_in">scanf</span>(“%ld,%f,&amp;p1-&gt;num,&amp;p1-&gt;score”); <span class="comment">// 输入第一个学生学号、成绩</span></span><br><span class="line">head=<span class="literal">NULL</span>; <span class="comment">// 初始化表头</span></span><br><span class="line"><span class="keyword">while</span>(p1-&gt;num!=<span class="number">0</span>) <span class="comment">// 如果有输入</span></span><br><span class="line">&#123;</span><br><span class="line">n=n+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(n==<span class="number">1</span>) head=p1; <span class="comment">// 第一次输入则把首次开辟空间的地址给表头</span></span><br><span class="line"><span class="keyword">else</span> p2-&gt;next=p1; <span class="comment">// 不是第一次则把最新开辟空间地址给 p2 所指向的结点内指针，如结点 1 内的结点 2 指针</span></span><br><span class="line">p2=p1; <span class="comment">// 然后将 p2 指针指向最新开辟空间，如结点 1</span></span><br><span class="line">p1=(struct Student *) <span class="built_in">malloc</span>(Len); <span class="comment">// 再开辟新单元，如结点 2</span></span><br><span class="line"><span class="built_in">scanf</span>(“%ld,%f,&amp;p1-&gt;num,&amp;p1-&gt;score”); <span class="comment">// 输入第 2 个学生学号、成绩</span></span><br><span class="line">&#125;</span><br><span class="line">p2-&gt;next=<span class="literal">NULL</span>; <span class="comment">// 最后一个结点内指针应为空</span></span><br><span class="line"><span class="keyword">return</span>(head); <span class="comment">// 返回此链表首地址</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> *<span class="title">pt</span>;</span></span><br><span class="line">pt=creat(); <span class="comment">// 函数返回链表第一个节点的地址</span></span><br><span class="line"><span class="keyword">if</span>(pt!=<span class="literal">NULL</span>)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;<span class="built_in">printf</span>(“%ld %f\n”,pt-&gt;num,pt-&gt;score); <span class="comment">// 输出结点数据</span></span><br><span class="line">pt=pt-&gt;next;&#125; <span class="comment">// 指向下一结点</span></span><br><span class="line"><span class="keyword">while</span>(p!=<span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="6-5 循环结构"><a href="#6-5 循环结构" class="headerlink" title="6.5 循环结构"></a>6.5 循环结构</h3><h4 id="（1）while-do-while-for"><a href="#（1）while-do-while-for" class="headerlink" title="（1）while/do,while/for"></a>（1）while/do,while/for</h4><p><img data-src="/archives/fb4ff9cc/20181225221823915-1632636706296.png"><br><img data-src="/archives/fb4ff9cc/20181225221832971-1632636708866.png"><br><img data-src="/archives/fb4ff9cc/20181225221836438-1632636710704.png"></p>
+<h4 id="（2）break-continue"><a href="#（2）break-continue" class="headerlink" title="（2）break/continue"></a>（2）break/continue</h4><p>改变循环状态<br><img data-src="/archives/fb4ff9cc/20181225221859710-1632636712388.png"></p>
 
     </div>
 
@@ -486,7 +410,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc.html" title="C 语言谭浩强读书笔记">http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc.html</a>
+    <a href="http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc.html" title="C 语言学习笔记 ( 上）">http://fat_fat_where_are_you.gitee.io/archives/fb4ff9cc.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -577,7 +501,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C 语言（谭浩强版）读书笔记"><span class="nav-text">C 语言（谭浩强版）读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1- 加油"><span class="nav-text">1. 加油</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2- 程序组成"><span class="nav-text">2. 程序组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3- 数据类型"><span class="nav-text">3. 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1 数据类型"><span class="nav-text">3.1 数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2 常量类型"><span class="nav-text">3.2 常量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3 转义字符"><span class="nav-text">3.3 转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4 格式字符 - 修饰符"><span class="nav-text">3.4 格式字符 &#x2F; 修饰符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4- 运算"><span class="nav-text">4. 运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1 优先级"><span class="nav-text">4.1 优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2 不同类型混合运算"><span class="nav-text">4.2 不同类型混合运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3 强制转换类型"><span class="nav-text">4.3 强制转换类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5- 头文件"><span class="nav-text">5. 头文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1stdio-h"><span class="nav-text">5.1stdio.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2math-h"><span class="nav-text">5.2math.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3stdlib-h"><span class="nav-text">5.3stdlib.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4string-h"><span class="nav-text">5.4string.h</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-C 语句"><span class="nav-text">6.C 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1 表达式 - 语句"><span class="nav-text">6.1 表达式 &#x2F; 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2 赋值语句"><span class="nav-text">6.2 赋值语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3 输入输出"><span class="nav-text">6.3 输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）数据输出"><span class="nav-text">（1）数据输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）数据输入"><span class="nav-text">（2）数据输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（3）字符输出"><span class="nav-text">（3）字符输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（4）字符输入"><span class="nav-text">（4）字符输入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4 选择结构"><span class="nav-text">6.4 选择结构 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）if-else"><span class="nav-text">（1）if&#x2F;else</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）-："><span class="nav-text">（2）?&#x2F;：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（3）switch-case"><span class="nav-text">（3）switch&#x2F;case</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5 循环结构"><span class="nav-text">6.5 循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）while-do-while-for"><span class="nav-text">（1）while&#x2F;do,while&#x2F;for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）break-continue"><span class="nav-text">（2）break&#x2F;continue</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7- 数组"><span class="nav-text">7. 数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1 一维数组"><span class="nav-text">7.1 一维数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2 二维数组（矩阵）"><span class="nav-text">7.2 二维数组（矩阵）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-3 字符数组"><span class="nav-text">7.3 字符数组 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-4 字符串处理函数"><span class="nav-text">7.4 字符串处理函数 </span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8- 函数"><span class="nav-text">8. 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1 定义 - 声明"><span class="nav-text">8.1 定义 &#x2F; 声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2 调用"><span class="nav-text">8.2 调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3 数组参数"><span class="nav-text">8.3 数组参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-4 局部变量 - 全局变量"><span class="nav-text">8.4 局部变量 &#x2F; 全局变量 </span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9- 指针"><span class="nav-text">9. 指针 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1 指针变量"><span class="nav-text">9.1 指针变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2 数组指针"><span class="nav-text">9.2 数组指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3 二维数组指针"><span class="nav-text">9.3 二维数组指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-4 字符串指针"><span class="nav-text">9.4 字符串指针 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-5 函数指针"><span class="nav-text">9.5 函数指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-6 指针型函数"><span class="nav-text">9.6 指针型函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-7 指针型数组 - 指针"><span class="nav-text">9.7 指针型数组 &#x2F; 指针</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10- 自定义数据类型"><span class="nav-text">10. 自定义数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-1 结构体"><span class="nav-text">10.1 结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）结构体变量"><span class="nav-text">（1）结构体变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）结构体数组"><span class="nav-text">（2）结构体数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（3）结构体指针"><span class="nav-text">（3）结构体指针</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2 链表"><span class="nav-text">10.2 链表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）含义"><span class="nav-text">（1）含义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）具体分析"><span class="nav-text">（2）具体分析 </span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3 共用体"><span class="nav-text">10.3 共用体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-4typedef 声明新类型"><span class="nav-text">10.4typedef 声明新类型 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）格式"><span class="nav-text">（1）格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）define-typedef"><span class="nav-text">（2）define&#x2F;typedef</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（3）新头文件"><span class="nav-text">（3）新头文件 </span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C%20%E8%AF%AD%E8%A8%80%EF%BC%88%E8%B0%AD%E6%B5%A9%E5%BC%BA%E7%89%88%EF%BC%89%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">C 语言（谭浩强版）读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%20%E5%8A%A0%E6%B2%B9"><span class="nav-text">1. 加油</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%20%E7%A8%8B%E5%BA%8F%E7%BB%84%E6%88%90"><span class="nav-text">2. 程序组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">3. 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">3.1 数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2%20%E5%B8%B8%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-text">3.2 常量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3%20%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="nav-text">3.3 转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4%20%E6%A0%BC%E5%BC%8F%E5%AD%97%E7%AC%A6%20-%20%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-text">3.4 格式字符 &#x2F; 修饰符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%20%E8%BF%90%E7%AE%97"><span class="nav-text">4. 运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%20%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">4.1 优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%20%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E6%B7%B7%E5%90%88%E8%BF%90%E7%AE%97"><span class="nav-text">4.2 不同类型混合运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3%20%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B"><span class="nav-text">4.3 强制转换类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%20%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-text">5. 头文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1stdio-h"><span class="nav-text">5.1stdio.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2math-h"><span class="nav-text">5.2math.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3stdlib-h"><span class="nav-text">5.3stdlib.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4string-h"><span class="nav-text">5.4string.h</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-C%20%E8%AF%AD%E5%8F%A5"><span class="nav-text">6.C 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1%20%E8%A1%A8%E8%BE%BE%E5%BC%8F%20-%20%E8%AF%AD%E5%8F%A5"><span class="nav-text">6.1 表达式 &#x2F; 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2%20%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5"><span class="nav-text">6.2 赋值语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">6.3 输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%95%B0%E6%8D%AE%E8%BE%93%E5%87%BA"><span class="nav-text">（1）数据输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5"><span class="nav-text">（2）数据输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA"><span class="nav-text">（3）字符输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5"><span class="nav-text">（4）字符输入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4%20%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="nav-text">6.4 选择结构 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89if-else"><span class="nav-text">（1）if&#x2F;else</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89-%EF%BC%9A"><span class="nav-text">（2）?&#x2F;：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%883%EF%BC%89switch-case"><span class="nav-text">（3）switch&#x2F;case</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5%20%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-text">6.5 循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89while-do-while-for"><span class="nav-text">（1）while&#x2F;do,while&#x2F;for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89break-continue"><span class="nav-text">（2）break&#x2F;continue</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -592,7 +516,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -605,7 +529,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -663,12 +587,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">187k</span>
+    <span title="站点总字数">193k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:50</span>
+    <span title="站点阅读时长">2:56</span>
 </div>
 
 <div class="translate-style">
@@ -817,10 +741,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 <div class="moon-menu">
   <div class="moon-menu-items">
     
-    <div class="moon-menu-item" onclick="back2bottom()">
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item" onclick="back2bottom()">
       <i class="fa fa-chevron-down"></i>    </div>
     
-    <div class="moon-menu-item" onclick="back2top()">
+    <div id="moon-menu-item-back2top" class="moon-menu-item" onclick="back2top()">
       <i class="fa fa-chevron-up"></i>    </div>
     
   </div>

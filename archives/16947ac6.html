@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/astronaut32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/astronaut16.png">
@@ -32,7 +32,7 @@
 <meta property="og:description" content="HTML与CSS学习6 这篇文章主要讲了CSS的浮动部分，主要是有一个学成在线的案例学习到很多开发时的知识案例请移步学成在线案例这篇笔记是初学者写下的笔记，如有错误，欢迎指正。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-18T07:53:29.000Z">
-<meta property="article:modified_time" content="2020-07-18T09:42:55.319Z">
+<meta property="article:modified_time" content="2020-07-18T07:53:29.000Z">
 <meta property="article:author" content="肥肉啊肥肉你在哪">
 <meta property="article:tag" content="HTML与CSS">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
     lang   : 'zh-CN'
   };
 </script>
-
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css"><link rel="preload" as="style" href="/css/injector/light.css"><link rel="preload" as="style" href="/css/injector/dark.css">
   <title>HTML 与 CSS 学习 6 | 肥肉啊肥肉你在哪</title>
   
 
@@ -223,9 +223,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-18 15:53:29 / 修改时间：17:42:55" itemprop="dateCreated datePublished" datetime="2020-07-18T15:53:29+08:00">2020-07-18</time>
+              <time title="创建时间：2020-07-18 15:53:29" itemprop="dateCreated datePublished" datetime="2020-07-18T15:53:29+08:00">2020-07-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +265,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.7k</span>
+              <span>3.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -286,27 +285,22 @@
 
       
         <h1 id="HTML 与 CSS 学习 6"><a href="#HTML 与 CSS 学习 6" class="headerlink" title="HTML 与 CSS 学习 6"></a>HTML 与 CSS 学习 6</h1><blockquote>
-<p>这篇文章主要讲了 CSS 的浮动部分，主要是有一个学成在线的案例学习到很多开发时的知识 <br> 案例请移步 <a href="https://blog.csdn.net/weixin_46170034/article/details/104357836" target="_blank" rel="external nofollow noopener noreferrer"> 学成在线案例 </a><br> 这篇笔记是初学者写下的笔记，如有错误，欢迎指正。</p>
+<p>这篇文章主要讲了 CSS 的浮动部分，主要是有一个学成在线的案例学习到很多开发时的知识 <br> 案例请移步 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/weixin_46170034/article/details/104357836"> 学成在线案例 </a><br> 这篇笔记是初学者写下的笔记，如有错误，欢迎指正。</p>
 </blockquote>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="传统网页布局的三种方式"><a href="# 传统网页布局的三种方式" class="headerlink" title="传统网页布局的三种方式"></a>传统网页布局的三种方式</h2><ul>
-<li>标准流(普通流 / 文档流)：按照默认的方式排列</li>
-<li>浮动流</li>
-<li>定位流</li>
+<li>  标准流(普通流 / 文档流)：按照默认的方式排列</li>
+<li>  浮动流</li>
+<li>  定位流</li>
 </ul>
 <h2 id="CSS 浮动"><a href="#CSS 浮动" class="headerlink" title="CSS 浮动"></a>CSS 浮动</h2><ul>
-<li><p>浮动可以改变元素标签的默认排列方式</p>
-</li>
-<li><p>网页布局第一准则：多个块级元素横向排列标准流，多个块级元素纵向排列浮动流</p>
-</li>
+<li>浮动可以改变元素标签的默认排列方式</li>
+<li>网页布局第一准则：多个块级元素横向排列标准流，多个块级元素纵向排列浮动流</li>
 </ul>
 <h3 id="浮动详解"><a href="# 浮动详解" class="headerlink" title="浮动详解"></a>浮动详解</h3><ul>
-<li><p>float 属性创建浮动框，使其移动到一边，直到左边缘或右边缘碰到另一个浮动框的边缘或父元素边缘</p>
-</li>
-<li><p>代码示例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float: none | left | right;</span><br></pre></td></tr></table></figure>
-
+<li>float 属性创建浮动框，使其移动到一边，直到左边缘或右边缘碰到另一个浮动框的边缘或父元素边缘</li>
+<li>代码示例：  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">float</span>: none | left | right;</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -330,71 +324,59 @@
 </li>
 </ul>
 <h3 id="浮动特性"><a href="# 浮动特性" class="headerlink" title="浮动特性"></a>浮动特性</h3><ol>
-<li><p>浮动的元素会脱离标准流</p>
-<ul>
-<li>脱离标准流的控制，移动到指定位置 (俗称脱标)</li>
-<li>浮动盒子不会保留原先的位置</li>
+<li>浮动的元素会脱离标准流<ul>
+<li>  脱离标准流的控制，移动到指定位置 (俗称脱标)</li>
+<li>  浮动盒子不会保留原先的位置</li>
 </ul>
 <blockquote>
 <p>浮动是有浮动属性盒子会飘起来，后面没有浮动属性的盒子补上前面飘起来盒子位置</p>
 </blockquote>
 </li>
-<li><p>浮动的元素会一行显示并且元素顶端对齐</p>
-<ul>
-<li>浮动元素会紧紧贴在一起 (不会有空隙)</li>
-<li>如果父元素宽度装不下这些盒子，多出的盒子会另起一行对齐</li>
+<li>浮动的元素会一行显示并且元素顶端对齐<ul>
+<li>  浮动元素会紧紧贴在一起 (不会有空隙)</li>
+<li>  如果父元素宽度装不下这些盒子，多出的盒子会另起一行对齐</li>
 </ul>
 <blockquote>
 <p>可以这么理解：浮动的高度都是一样的，所以会并排显示</p>
 </blockquote>
 </li>
-<li><p>浮动元素会具有行内块元素特性</p>
-<ul>
-<li>行内元素添加 float 属性可以设置宽高</li>
-<li>块元素添加 float 属性可以在一行显示</li>
-<li>添加浮动的行内元素和块元素，他的宽度根据内容宽度来确定</li>
+<li>浮动元素会具有行内块元素特性<ul>
+<li>  行内元素添加 float 属性可以设置宽高</li>
+<li>  块元素添加 float 属性可以在一行显示</li>
+<li>  添加浮动的行内元素和块元素，他的宽度根据内容宽度来确定</li>
 </ul>
 </li>
 </ol>
 <h3 id="约束浮动元素策略"><a href="# 约束浮动元素策略" class="headerlink" title="约束浮动元素策略"></a>约束浮动元素策略</h3><ul>
-<li><p>先用标准流父元素排列上下位置，之后内部子元素浮动来排列左右位置 (网页布局第一准则)</p>
-</li>
-<li><p>网页布局第二准则：先设置盒子大小，在设置盒子位置</p>
-</li>
+<li>先用标准流父元素排列上下位置，之后内部子元素浮动来排列左右位置 (网页布局第一准则)</li>
+<li>网页布局第二准则：先设置盒子大小，在设置盒子位置</li>
 </ul>
 <h3 id="浮动布局的注意点"><a href="# 浮动布局的注意点" class="headerlink" title="浮动布局的注意点"></a>浮动布局的注意点</h3><ul>
-<li><p>和浏览器一样宽的盒子不需要指定宽度</p>
-</li>
-<li><p>元素浮动后只会影响后面的标准流，不影响之前的标准流</p>
-</li>
-<li><p>一个元素浮动了，其他的兄弟元素都应该浮动</p>
-</li>
+<li>和浏览器一样宽的盒子不需要指定宽度</li>
+<li>元素浮动后只会影响后面的标准流，不影响之前的标准流</li>
+<li>一个元素浮动了，其他的兄弟元素都应该浮动</li>
 </ul>
 <h3 id="清除浮动"><a href="# 清除浮动" class="headerlink" title="清除浮动"></a>清除浮动 </h3><h4 id="清除浮动的原因"><a href="# 清除浮动的原因" class="headerlink" title="清除浮动的原因"></a> 清除浮动的原因</h4><ul>
-<li>有些父级盒子不方便给高度(如比较高的盒子，或者盒子高度要随时改变)，但是又不能不给高度(下面的标准流盒子又会占用父级盒子的位置)</li>
+<li>  有些父级盒子不方便给高度(如比较高的盒子，或者盒子高度要随时改变)，但是又不能不给高度(下面的标准流盒子又会占用父级盒子的位置)</li>
 </ul>
 <h4 id="清除浮动的本质"><a href="# 清除浮动的本质" class="headerlink" title="清除浮动的本质"></a>清除浮动的本质</h4><ul>
-<li><p>清除浮动的本质是清除浮动元素对父级元素的影响</p>
-</li>
-<li><p>父盒子有高度，则不需要清除浮动</p>
-</li>
-<li><p>清除浮动以后，父级元素会自动检测盒子的高度，不会影响下面的标准流元素</p>
-</li>
-<li><p>语法规范：</p>
-</li>
+<li>清除浮动的本质是清除浮动元素对父级元素的影响</li>
+<li>父盒子有高度，则不需要清除浮动</li>
+<li>清除浮动以后，父级元素会自动检测盒子的高度，不会影响下面的标准流元素</li>
+<li>  语法规范：</li>
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: left | right | both;</span><br><span class="line">    <span class="comment">/* 清除左浮动，清除右浮动，同时清除 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <p>​<br>​    </p>
 <ul>
-<li>在开发时几乎只用<code>clear: both;</code></li>
+<li>  在开发时几乎只用<code>clear: both;</code></li>
 </ul>
 <h4 id="清除浮动的方法"><a href="# 清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h4><ol>
-<li>额外标签法(隔墙法，但平时不常用) <strong>W3C 推荐</strong></li>
-<li>父级添加 overflow 属性</li>
-<li>父级添加 after 伪元素</li>
-<li>给父级添加双伪元素</li>
+<li> 额外标签法(隔墙法，但平时不常用) <strong>W3C 推荐</strong></li>
+<li> 父级添加 overflow 属性</li>
+<li> 父级添加 after 伪元素</li>
+<li> 给父级添加双伪元素</li>
 </ol>
 <h5 id="额外标签法"><a href="# 额外标签法" class="headerlink" title="额外标签法"></a>额外标签法</h5><ul>
 <li><p>在父级盒子后面新建一个盒子(必须是块级元素)</p>
@@ -404,16 +386,10 @@
 <li><p>发现父元素能自动检测高度，不会影响后面的标准流元素</p>
 </li>
 <li><p>这种写法父盒子本身高度没有增加，而只是在浮动元素后增加一个盒子拦住下面标准流的元素</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background-color: skyblue;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.clear</span> &#123;</span></span><br><span class="line">        clear: both;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"clear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">background-color</span>: skyblue;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.clear</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">clear</span>: both;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clear&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>优点：通俗易懂，书写方便</p>
 </li>
-<li><p>缺点：添加许多无意义的标签，结构性较差</p>
+<li><p>  缺点：添加许多无意义的标签，结构性较差</p>
 </li>
 </ul>
 <h5 id="给父级添加 overflow"><a href="# 给父级添加 overflow" class="headerlink" title="给父级添加 overflow"></a>给父级添加 overflow</h5><ul>
@@ -422,59 +398,41 @@
 <li><p>这种方法父元素的高度会变得和子元素一样高，但是一旦有超出父元素边界的部分就会被隐藏</p>
 </li>
 <li><p>语法样例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.box</span> &#123;</span></span><br><span class="line">        overflow: hidden;</span><br><span class="line"><span class="css">        <span class="comment">/* 清除浮动 */</span></span></span><br><span class="line">        width: 800px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line">        float: left;</span><br><span class="line">        width: 400px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 清除浮动 */</span></span></span><br><span class="line"><span class="css">        <span class="attribute">width</span>: <span class="number">800px</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">        <span class="attribute">width</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>优点：代码简洁</p>
 </li>
-<li><p>缺点：无法显示溢出的部分 (例如 margin 取负值)</p>
+<li><p>  缺点：无法显示溢出的部分 (例如 margin 取负值)</p>
 </li>
 </ul>
 <h5 id="after 伪元素法"><a href="#after 伪元素法" class="headerlink" title="after 伪元素法"></a>after 伪元素法</h5><ul>
 <li><p>相当于额外标签法的升级版</p>
 </li>
 <li><p>语法规范：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    <span class="comment">/* I6,I7 专有 */</span></span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span>:after &#123;</span><br><span class="line">    content: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    <span class="comment">/* I6,I7 专有 */</span></span><br><span class="line">    *zoom: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p>使用：在父元素上添加这个属性</p>
 </li>
-<li><p>例<code>&lt;div class=&quot;nav clearfix&quot;&gt;...&lt;/div&gt;</code></p>
+<li><p>  例<code>&lt;div class=&quot;nav clearfix&quot;&gt;...&lt;/div&gt;</code></p>
 </li>
 </ul>
 <h5 id="双伪元素清除浮动 - 最常使用"><a href="# 双伪元素清除浮动 - 最常使用" class="headerlink" title="双伪元素清除浮动 (最常使用)"></a>双伪元素清除浮动 (最常使用)</h5><ul>
 <li><p>语法规范：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>:table;</span><br><span class="line">  <span class="comment">/* 如果写 display:block 的话两个块元素就会分行显示，影响父盒子大小 */</span></span><br><span class="line">  <span class="comment">/* table 是表格，转化成块级元素并同行显示 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line"> <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">  *zoom:1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用方法和伪元素法一样，在父元素上加上这个属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span>:before,.clearfix:after &#123;</span><br><span class="line">  content:<span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">display</span>:table;</span><br><span class="line">  <span class="comment">/* 如果写 display:block 的话两个块元素就会分行显示，影响父盒子大小 */</span></span><br><span class="line">  <span class="comment">/* table 是表格，转化成块级元素并同行显示 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span>:after &#123;</span><br><span class="line"> clear:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">  *zoom:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>  使用方法和伪元素法一样，在父元素上加上这个属性</p>
 </li>
 </ul>
 <h2 id="PS 切图模式"><a href="#PS 切图模式" class="headerlink" title="PS 切图模式"></a>PS 切图模式</h2><ul>
-<li><p>jpg 像素较高，常用于产品图片</p>
-</li>
-<li><p>图层切图：单击图层，选择快速导出为 PNG</p>
-</li>
-<li><p>如果有多个元素想要导出为图片，合并两个图层(Ctrl+E)，然后导出</p>
-</li>
-<li><p>切片工具切图：</p>
-<ol>
-<li>选中要切的部分</li>
-<li>导出：文件 -&gt; 导出 -&gt; 储存为 Web 所用的格式，储存(储存时要选择选中的切片)</li>
-<li>要导出背景透明的部分，关闭背景的眼睛，储存时选择 png 格式</li>
+<li>jpg 像素较高，常用于产品图片</li>
+<li>图层切图：单击图层，选择快速导出为 PNG</li>
+<li>如果有多个元素想要导出为图片，合并两个图层(Ctrl+E)，然后导出</li>
+<li>切片工具切图：<ol>
+<li> 选中要切的部分</li>
+<li> 导出：文件 -&gt; 导出 -&gt; 储存为 Web 所用的格式，储存(储存时要选择选中的切片)</li>
+<li> 要导出背景透明的部分，关闭背景的眼睛，储存时选择 png 格式</li>
 </ol>
 </li>
-<li><p>PS 插件切图</p>
-<ul>
-<li>插件名：Cutterman</li>
-<li>导出选中的图层</li>
+<li>PS 插件切图<ul>
+<li>  插件名：Cutterman</li>
+<li>  导出选中的图层</li>
 </ul>
 </li>
 </ul>
@@ -483,34 +441,28 @@
 </blockquote>
 <h3 id="CSS- 属性书写顺序"><a href="#CSS- 属性书写顺序" class="headerlink" title="CSS 属性书写顺序"></a>CSS 属性书写顺序</h3><ul>
 <li>建议顺序：<ol>
-<li>布局定位样式：display <strong>默认第一个写，关系到元素样式</strong> / position / float / clear / vidibilty</li>
-<li>自身属性：width / height / margin / padding / border / background</li>
-<li>文本属性：color / font / text-decoration / text-align / vertical-align / white-space / break-word</li>
-<li>其他属性(CSS3)：content / cursor / border-radius / box-shadow / texte-shadow /…背景颜色 rgba 要放在这里(rgba 为 css3 的属性)</li>
+<li> 布局定位样式：display <strong>默认第一个写，关系到元素样式</strong> / position / float / clear / vidibilty</li>
+<li> 自身属性：width / height / margin / padding / border / background</li>
+<li> 文本属性：color / font / text-decoration / text-align / vertical-align / white-space / break-word</li>
+<li> 其他属性(CSS3)：content / cursor / border-radius / box-shadow / texte-shadow /…背景颜色 rgba 要放在这里(rgba 为 css3 的属性)</li>
 </ol>
 </li>
 </ul>
 <h3 id="页面布局思路"><a href="# 页面布局思路" class="headerlink" title="页面布局思路"></a>页面布局思路</h3><ul>
-<li>确定页面的可视区</li>
-<li>分析页面的行模块，在数行模块里的列模块</li>
-<li>每个行模块里面的列元素要用浮动布局，先确定大小再确定位置</li>
-<li>制作 HTML 结构，遵循先有结构，后有样式的原则</li>
+<li>  确定页面的可视区</li>
+<li>  分析页面的行模块，在数行模块里的列模块</li>
+<li>  每个行模块里面的列元素要用浮动布局，先确定大小再确定位置</li>
+<li>  制作 HTML 结构，遵循先有结构，后有样式的原则</li>
 </ul>
 <h4 id="导航栏的实际操作方法"><a href="# 导航栏的实际操作方法" class="headerlink" title="导航栏的实际操作方法"></a>导航栏的实际操作方法</h4><ul>
 <li><p>实际开发中不会直接用 a 标签，而是用 li 里面包含链接的方法</p>
 <ul>
-<li>原因：li 语法更清晰</li>
+<li>  原因：li 语法更清晰</li>
 <li>如果直接使用 a，搜索引擎会识别为有堆砌关键字的嫌疑，影响网站排名</li>
 </ul>
 </li>
 <li><p>代码示例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line">        float: left;</span><br><span class="line">        margin-left: 60px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span></span><br><span class="line">        float: left;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span></span><br><span class="line">        display: block;</span><br><span class="line">        padding: 0 10px;</span><br><span class="line">        height: 42px;</span><br><span class="line">        font-size: 18px;</span><br><span class="line">        line-height: 42px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>首页 <span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span> 课程 <span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span> 职业规划<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">        <span class="attribute">margin-left</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css">    </span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="css">        <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">10px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">height</span>: <span class="number">42px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">font-size</span>: <span class="number">18px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">line-height</span>: <span class="number">42px</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>首页 <span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span> 课程 <span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span> 职业规划<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>注意事项，导航栏外面的盒子不要给宽度，里面内容是多宽外面的盒子就是多宽，方便以后添加文字</p>
 </li>
 <li><p>通常使用 padding 来指定每一个链接模块的宽度，看起来十分整洁</p>
@@ -519,11 +471,11 @@
 </li>
 <li><p>行内块元素中间默认有空隙</p>
 </li>
-<li><p>完整的代码案例在 <a href="https://blog.csdn.net/weixin_46170034/article/details/104357836" target="_blank" rel="external nofollow noopener noreferrer">demo7.html</a> 中</p>
+<li><p>  完整的代码案例在 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/weixin_46170034/article/details/104357836">demo7.html</a> 中</p>
 </li>
 </ul>
 <blockquote>
-<p>本文转载自<a href="https://blog.csdn.net/weixin_46170034/article/details/104357814" target="_blank" rel="external nofollow noopener noreferrer">https://blog.csdn.net/weixin_46170034/article/details/104357814</a></p>
+<p>本文转载自<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/weixin_46170034/article/details/104357814">https://blog.csdn.net/weixin_46170034/article/details/104357814</a></p>
 </blockquote>
 
     </div>
@@ -535,19 +487,19 @@
   <div class="popular-posts-header">相关文章推荐</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\archives\c10fa92e.html" rel="bookmark">读《Head First HTML 与 CSS》3</a></div>
+      <div class="popular-posts-title"><a href="\archives\88f0ef65.html" rel="bookmark">HTML 与 CSS 学习 1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\archives\11f9bedf.html" rel="bookmark">HTML 与 CSS 学习 2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\archives\66fe8e49.html" rel="bookmark">HTML 与 CSS 学习 3</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\archives\f89a1bea.html" rel="bookmark">HTML 与 CSS 学习 4</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\archives\862b6757.html" rel="bookmark">HTML 与 CSS 学习 9</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\archives\f12c57c1.html" rel="bookmark">HTML 与 CSS 学习 8</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\archives\61934a50.html" rel="bookmark">HTML 与 CSS 学习 7</a></div>
+      <div class="popular-posts-title"><a href="\archives\8f9d2b7c.html" rel="bookmark">HTML 与 CSS 学习 5</a></div>
     </li>
   </ul>
 
@@ -671,7 +623,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML 与 CSS 学习 6"><span class="nav-text">HTML 与 CSS 学习 6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传统网页布局的三种方式"><span class="nav-text">传统网页布局的三种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS 浮动"><span class="nav-text">CSS 浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动详解"><span class="nav-text">浮动详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动特性"><span class="nav-text">浮动特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#约束浮动元素策略"><span class="nav-text">约束浮动元素策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动布局的注意点"><span class="nav-text">浮动布局的注意点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除浮动"><span class="nav-text">清除浮动 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#清除浮动的原因"><span class="nav-text"> 清除浮动的原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除浮动的本质"><span class="nav-text">清除浮动的本质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除浮动的方法"><span class="nav-text">清除浮动的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#额外标签法"><span class="nav-text">额外标签法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#给父级添加 overflow"><span class="nav-text">给父级添加 overflow</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#after 伪元素法"><span class="nav-text">after 伪元素法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#双伪元素清除浮动 - 最常使用"><span class="nav-text">双伪元素清除浮动 (最常使用)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS 切图模式"><span class="nav-text">PS 切图模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学成在线案例"><span class="nav-text">学成在线案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS- 属性书写顺序"><span class="nav-text">CSS 属性书写顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面布局思路"><span class="nav-text">页面布局思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导航栏的实际操作方法"><span class="nav-text">导航栏的实际操作方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML%20%E4%B8%8E%20CSS%20%E5%AD%A6%E4%B9%A0%206"><span class="nav-text">HTML 与 CSS 学习 6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-text">传统网页布局的三种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%20%E6%B5%AE%E5%8A%A8"><span class="nav-text">CSS 浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E5%8A%A8%E8%AF%A6%E8%A7%A3"><span class="nav-text">浮动详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E5%8A%A8%E7%89%B9%E6%80%A7"><span class="nav-text">浮动特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A6%E6%9D%9F%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E7%AD%96%E7%95%A5"><span class="nav-text">约束浮动元素策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E5%8A%A8%E5%B8%83%E5%B1%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-text">浮动布局的注意点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="nav-text">清除浮动 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-text"> 清除浮动的原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">清除浮动的本质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">清除浮动的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%9D%E5%A4%96%E6%A0%87%E7%AD%BE%E6%B3%95"><span class="nav-text">额外标签法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%99%E7%88%B6%E7%BA%A7%E6%B7%BB%E5%8A%A0%20overflow"><span class="nav-text">给父级添加 overflow</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#after%20%E4%BC%AA%E5%85%83%E7%B4%A0%E6%B3%95"><span class="nav-text">after 伪元素法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%8C%E4%BC%AA%E5%85%83%E7%B4%A0%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%20-%20%E6%9C%80%E5%B8%B8%E4%BD%BF%E7%94%A8"><span class="nav-text">双伪元素清除浮动 (最常使用)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS%20%E5%88%87%E5%9B%BE%E6%A8%A1%E5%BC%8F"><span class="nav-text">PS 切图模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E6%88%90%E5%9C%A8%E7%BA%BF%E6%A1%88%E4%BE%8B"><span class="nav-text">学成在线案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-%20%E5%B1%9E%E6%80%A7%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F"><span class="nav-text">CSS 属性书写顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E6%80%9D%E8%B7%AF"><span class="nav-text">页面布局思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9A%84%E5%AE%9E%E9%99%85%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-text">导航栏的实际操作方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -686,7 +638,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -699,7 +651,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -757,12 +709,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">187k</span>
+    <span title="站点总字数">193k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:50</span>
+    <span title="站点阅读时长">2:56</span>
 </div>
 
 <div class="translate-style">
@@ -911,10 +863,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 <div class="moon-menu">
   <div class="moon-menu-items">
     
-    <div class="moon-menu-item" onclick="back2bottom()">
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item" onclick="back2bottom()">
       <i class="fa fa-chevron-down"></i>    </div>
     
-    <div class="moon-menu-item" onclick="back2top()">
+    <div id="moon-menu-item-back2top" class="moon-menu-item" onclick="back2top()">
       <i class="fa fa-chevron-up"></i>    </div>
     
   </div>
