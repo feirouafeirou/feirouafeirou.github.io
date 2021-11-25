@@ -1220,7 +1220,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b6032d;
+  background: #0103ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2786,7 +2786,7 @@ canvas {
   color: #333;
 }
 body {
-  background: url("/images/beijing.jpg");
+  background: url("/images/beijing1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
